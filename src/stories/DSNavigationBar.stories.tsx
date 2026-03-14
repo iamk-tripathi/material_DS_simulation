@@ -1,52 +1,50 @@
+import type { ReactNode } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import {
-  BottomNavigation,
-  BottomNavigationAction,
   Box,
+  DSNavigationBar,
   ThemeProvider,
   Home,
   Search,
   Person,
+  Favorite,
+  Settings,
 } from '../components';
 import { theme } from '../theme/theme';
 
-const navActions = (
-  <>
-    <BottomNavigationAction label="Home" icon={<Home />} />
-    <BottomNavigationAction label="Search" icon={<Search />} />
-    <BottomNavigationAction label="Profile" icon={<Person />} />
-  </>
-);
+const iconMap: Record<string, ReactNode> = {
+  home: <Home />,
+  search: <Search />,
+  person: <Person />,
+  favorite: <Favorite />,
+  settings: <Settings />,
+};
 
-const navSx = (theme: typeof theme) => ({
-  backgroundColor: theme.palette.background.paper,
-  paddingTop: theme.spacing(1),
-  paddingBottom: theme.spacing(1),
-});
+const resolveIcon = (icon: ReactNode) =>
+  typeof icon === 'string' ? iconMap[icon] ?? icon : icon;
 
 const meta = {
   title: 'DS / Navigation Bar',
-  component: BottomNavigation,
+  component: DSNavigationBar,
+  tags: ['autodocs'],
   args: {
-    value: 0,
-    showLabels: true,
-    children: navActions,
-    sx: navSx,
+    activeIndex: 0,
+    items: [
+      { label: 'Home', icon: 'home' },
+      { label: 'Search', icon: 'search' },
+      { label: 'Profile', icon: 'person' },
+    ],
+    onChange: () => undefined,
   },
-  argTypes: {
-    value: {
-      control: { type: 'number', min: 0, max: 2, step: 1 },
-    },
-    showLabels: {
-      control: 'boolean',
-    },
-    children: {
-      control: false,
-    },
-    sx: {
-      control: false,
-    },
-  },
+  render: (args) => (
+    <DSNavigationBar
+      {...args}
+      items={args.items.map((item) => ({
+        ...item,
+        icon: resolveIcon(item.icon),
+      }))}
+    />
+  ),
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
@@ -61,10 +59,22 @@ const meta = {
       </ThemeProvider>
     ),
   ],
-} satisfies Meta<typeof BottomNavigation>;
+} satisfies Meta<typeof DSNavigationBar>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
+export const FiveItems: Story = {
+  args: {
+    items: [
+      { label: 'Home', icon: 'home' },
+      { label: 'Search', icon: 'search' },
+      { label: 'Profile', icon: 'person' },
+      { label: 'Favorites', icon: 'favorite' },
+      { label: 'Settings', icon: 'settings' },
+    ],
+  },
+};

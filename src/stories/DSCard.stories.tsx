@@ -1,18 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import {
-  Box,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  ThemeProvider,
-  Typography,
-} from '../components';
+import { Box, DSButton, DSCard, ThemeProvider, Typography } from '../components';
 import { theme } from '../theme/theme';
 
-const CardBody = () => (
+const cardChildren = (
   <Box
     sx={(theme) => ({
+      padding: theme.spacing(4),
       display: 'flex',
       flexDirection: 'column',
       gap: theme.spacing(2),
@@ -25,54 +18,21 @@ const CardBody = () => (
     >
       Track revenue growth across channels and regions with the latest updates.
     </Typography>
+    <DSButton variant="text">View Details</DSButton>
   </Box>
-);
-
-const CardChildren = () => (
-  <>
-    <CardContent
-      sx={(theme) => ({
-        padding: theme.spacing(4),
-        '&:last-child': {
-          paddingBottom: theme.spacing(4),
-        },
-      })}
-    >
-      <CardBody />
-    </CardContent>
-    <CardActions
-      sx={(theme) => ({
-        paddingLeft: theme.spacing(4),
-        paddingRight: theme.spacing(4),
-        paddingBottom: theme.spacing(4),
-      })}
-    >
-      <Button variant="text">View Details</Button>
-    </CardActions>
-  </>
 );
 
 const meta = {
   title: 'DS / Card',
-  component: Card,
+  component: DSCard,
+  tags: ['autodocs'],
   args: {
-    variant: 'elevation',
-    elevation: 1,
-    children: <CardChildren />,
+    variant: 'elevated',
   },
   argTypes: {
     variant: {
       control: 'select',
-      options: ['elevation', 'outlined'],
-    },
-    elevation: {
-      control: { type: 'number', min: 0, max: 4, step: 1 },
-    },
-    children: {
-      control: false,
-    },
-    sx: {
-      control: false,
+      options: ['elevated', 'outlined', 'filled'],
     },
   },
   decorators: [
@@ -89,7 +49,7 @@ const meta = {
       </ThemeProvider>
     ),
   ],
-} satisfies Meta<typeof Card>;
+} satisfies Meta<typeof DSCard>;
 
 export default meta;
 
@@ -97,14 +57,21 @@ type Story = StoryObj<typeof meta>;
 
 export const Elevated: Story = {
   args: {
-    variant: 'elevation',
-    elevation: 1,
+    variant: 'elevated',
+    children: cardChildren,
   },
 };
 
 export const Outlined: Story = {
   args: {
     variant: 'outlined',
-    elevation: 0,
+    children: cardChildren,
+  },
+};
+
+export const Filled: Story = {
+  args: {
+    variant: 'filled',
+    children: cardChildren,
   },
 };

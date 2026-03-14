@@ -1,57 +1,30 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Box, Button, ThemeProvider, Typography } from '../components';
+import { Box, DSButton, ThemeProvider } from '../components';
 import { theme } from '../theme/theme';
-
-const VariantsRow = () => (
-  <Box
-    sx={(theme) => ({
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: theme.spacing(2),
-      alignItems: 'center',
-      padding: theme.spacing(4),
-      borderRadius: theme.shape.borderRadius,
-      backgroundColor: theme.palette.background.default,
-    })}
-  >
-    <Button variant="contained">Primary</Button>
-    <Button variant="outlined">Secondary</Button>
-    <Button variant="text">Tertiary</Button>
-    <Button variant="contained" color="error">
-      Destructive
-    </Button>
-    <Button variant="outlined" disabled>
-      Disabled
-    </Button>
-  </Box>
-);
 
 const meta = {
   title: 'DS / Button',
-  component: Button,
+  component: DSButton,
+  tags: ['autodocs'],
   args: {
-    variant: 'contained',
+    variant: 'filled',
+    children: 'Button',
     color: 'primary',
-    children: 'Primary',
-    disabled: false,
   },
   argTypes: {
     variant: {
       control: 'select',
-      options: ['contained', 'outlined', 'text'],
+      options: ['filled', 'outlined', 'text'],
     },
     color: {
       control: 'select',
-      options: ['primary', 'secondary', 'error'],
-    },
-    children: {
-      control: 'text',
+      options: ['primary', 'error'],
     },
     disabled: {
       control: 'boolean',
     },
-    sx: {
-      control: false,
+    children: {
+      control: 'text',
     },
   },
   decorators: [
@@ -68,57 +41,28 @@ const meta = {
       </ThemeProvider>
     ),
   ],
-  parameters: {
-    docs: {
-      page: () => (
-        <ThemeProvider theme={theme}>
-          <Box
-            sx={(theme) => ({
-              padding: theme.spacing(4),
-              backgroundColor: theme.palette.background.default,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: theme.spacing(4),
-            })}
-          >
-            <Typography variant="h6">Button Variants</Typography>
-            <VariantsRow />
-          </Box>
-        </ThemeProvider>
-      ),
-    },
-  },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof DSButton>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Filled: Story = {
-  args: {
-    variant: 'contained',
-    color: 'primary',
-    children: 'Primary',
-  },
-};
+export const Filled: Story = {};
 
 export const Outlined: Story = {
   args: {
     variant: 'outlined',
-    children: 'Secondary',
   },
 };
 
 export const Text: Story = {
   args: {
     variant: 'text',
-    children: 'Tertiary',
   },
 };
 
 export const Destructive: Story = {
   args: {
-    variant: 'contained',
     color: 'error',
     children: 'Destructive',
   },
@@ -126,8 +70,6 @@ export const Destructive: Story = {
 
 export const Disabled: Story = {
   args: {
-    variant: 'outlined',
-    children: 'Disabled',
     disabled: true,
   },
 };

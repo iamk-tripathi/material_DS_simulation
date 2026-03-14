@@ -19,21 +19,14 @@ export {
   TextField,
   Toolbar,
   Typography,
-} from '@mui/material';
+} from './mui';
+
 export { ThemeProvider } from '@mui/material/styles';
-export {
-  ArrowBack,
-  ChevronRight,
-  DarkMode,
-  Edit,
-  HelpOutline,
-  Home,
-  Info,
-  Language,
-  Lock,
-  MailOutline,
-  Notifications,
-  Person,
-  Search,
-  Security,
-} from '@mui/icons-material';
+
+export * from './icons';
+
+export { default as DSButton } from './DSButton';
+export { default as DSCard } from './DSCard';
+export { default as DSTextField } from './DSTextField';
+export { default as DSAppBar } from './DSAppBar';
+export { default as DSNavigationBar } from './DSNavigationBar';

@@ -1,19 +1,16 @@
 import {
-  AppBar,
   Avatar,
   Box,
-  Button,
   Divider,
-  IconButton,
+  DSAppBar,
+  DSButton,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
   Switch,
   ThemeProvider,
-  Toolbar,
   Typography,
-  ArrowBack,
   ChevronRight,
   DarkMode,
   Edit,
@@ -66,30 +63,7 @@ function Settings() {
           flexDirection: 'column',
         })}
       >
-        <AppBar
-          position="static"
-          elevation={0}
-          sx={(theme) => ({
-            backgroundColor: theme.palette.background.paper,
-            color: theme.palette.text.primary,
-          })}
-        >
-          <Toolbar
-            sx={(theme) => ({
-              minHeight: theme.spacing(16),
-              paddingLeft: theme.spacing(4),
-              paddingRight: theme.spacing(4),
-              display: 'flex',
-              alignItems: 'center',
-              gap: theme.spacing(2),
-            })}
-          >
-            <IconButton aria-label="Back">
-              <ArrowBack />
-            </IconButton>
-            <Typography variant="h6">Settings</Typography>
-          </Toolbar>
-        </AppBar>
+        <DSAppBar size="small" title="Settings" showBackArrow />
 
         <Box
           sx={(theme) => ({
@@ -232,17 +206,13 @@ function Settings() {
               marginTop: theme.spacing(4),
             })}
           >
-            <Button
+            <DSButton
               fullWidth
-              variant="outlined"
               color="error"
-              sx={(theme) => ({
-                paddingTop: theme.spacing(2),
-                paddingBottom: theme.spacing(2),
-              })}
+              variant="outlined"
             >
               Sign Out
-            </Button>
+            </DSButton>
           </Box>
         </Box>
       </Box>

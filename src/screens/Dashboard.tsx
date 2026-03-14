@@ -1,19 +1,16 @@
 import { useState } from 'react';
 import {
-  AppBar,
   Avatar,
-  BottomNavigation,
-  BottomNavigationAction,
   Box,
-  Card,
   CardContent,
-  IconButton,
   List,
   ListItem,
   ListItemText,
   Paper,
+  DSAppBar,
+  DSCard,
+  DSNavigationBar,
   ThemeProvider,
-  Toolbar,
   Typography,
   Home,
   Search,
@@ -47,40 +44,22 @@ function Dashboard() {
           flexDirection: 'column',
         })}
       >
-        <AppBar
-          position="static"
-          elevation={0}
-          sx={(theme) => ({
-            backgroundColor: theme.palette.background.paper,
-            color: theme.palette.text.primary,
-          })}
-        >
-          <Toolbar
-            sx={(theme) => ({
-              minHeight: theme.spacing(16),
-              paddingLeft: theme.spacing(4),
-              paddingRight: theme.spacing(4),
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: theme.spacing(2),
-            })}
-          >
-            <Typography variant="h6">Dashboard</Typography>
-            <IconButton aria-label="Profile">
-              <Avatar
-                sx={(theme) => ({
-                  bgcolor: theme.palette.secondary.main,
-                  color: theme.palette.secondary.contrastText,
-                  width: theme.spacing(10),
-                  height: theme.spacing(10),
-                })}
-              >
-                <Person />
-              </Avatar>
-            </IconButton>
-          </Toolbar>
-        </AppBar>
+        <DSAppBar
+          size="small"
+          title="Dashboard"
+          rightElement={
+            <Avatar
+              sx={(theme) => ({
+                bgcolor: theme.palette.secondary.main,
+                color: theme.palette.secondary.contrastText,
+                width: theme.spacing(10),
+                height: theme.spacing(10),
+              })}
+            >
+              <Person />
+            </Avatar>
+          }
+        />
 
         <Box
           sx={(theme) => ({
@@ -102,7 +81,7 @@ function Dashboard() {
             })}
           >
             {summaryStats.map((stat) => (
-              <Card key={stat.label} elevation={1}>
+              <DSCard key={stat.label} variant="elevated">
                 <CardContent
                   sx={(theme) => ({
                     padding: theme.spacing(4),
@@ -133,7 +112,7 @@ function Dashboard() {
                     {stat.delta}
                   </Typography>
                 </CardContent>
-              </Card>
+              </DSCard>
             ))}
           </Box>
 
@@ -145,7 +124,7 @@ function Dashboard() {
             })}
           >
             <Typography variant="h5">Recent Activity</Typography>
-            <Card elevation={1}>
+            <DSCard variant="elevated">
               <CardContent
                 sx={(theme) => ({
                   padding: theme.spacing(3),
@@ -192,7 +171,7 @@ function Dashboard() {
                   ))}
                 </List>
               </CardContent>
-            </Card>
+            </DSCard>
           </Box>
         </Box>
 
@@ -206,19 +185,15 @@ function Dashboard() {
             backgroundColor: theme.palette.background.paper,
           })}
         >
-          <BottomNavigation
-            value={navValue}
-            onChange={(_, newValue) => setNavValue(newValue)}
-            showLabels
-            sx={(theme) => ({
-              paddingTop: theme.spacing(1),
-              paddingBottom: theme.spacing(1),
-            })}
-          >
-            <BottomNavigationAction label="Home" icon={<Home />} />
-            <BottomNavigationAction label="Search" icon={<Search />} />
-            <BottomNavigationAction label="Profile" icon={<Person />} />
-          </BottomNavigation>
+          <DSNavigationBar
+            items={[
+              { label: 'Home', icon: <Home /> },
+              { label: 'Search', icon: <Search /> },
+              { label: 'Profile', icon: <Person /> },
+            ]}
+            activeIndex={navValue}
+            onChange={setNavValue}
+          />
         </Paper>
       </Box>
     </ThemeProvider>

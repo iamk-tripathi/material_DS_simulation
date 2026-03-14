@@ -1,57 +1,39 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import {
-  AppBar,
-  Avatar,
-  Box,
-  IconButton,
-  ThemeProvider,
-  Toolbar,
-  Typography,
-  ArrowBack,
-  Person,
-} from '../components';
+import { Avatar, Box, DSAppBar, ThemeProvider, Person } from '../components';
 import { theme } from '../theme/theme';
 
-const appBarSx = (theme: typeof theme) => ({
-  backgroundColor: theme.palette.background.paper,
-  color: theme.palette.text.primary,
-});
-
-const toolbarSx = (theme: typeof theme) => ({
-  minHeight: theme.spacing(16),
-  paddingLeft: theme.spacing(4),
-  paddingRight: theme.spacing(4),
-  display: 'flex',
-  alignItems: 'center',
-  gap: theme.spacing(2),
-});
+const avatarElement = (
+  <Avatar
+    sx={(theme) => ({
+      width: theme.spacing(10),
+      height: theme.spacing(10),
+      bgcolor: theme.palette.secondary.main,
+      color: theme.palette.secondary.contrastText,
+    })}
+  >
+    <Person />
+  </Avatar>
+);
 
 const meta = {
   title: 'DS / App Bar',
-  component: AppBar,
+  component: DSAppBar,
+  tags: ['autodocs'],
   args: {
-    position: 'static',
-    elevation: 0,
-    sx: appBarSx,
-    children: (
-      <Toolbar sx={toolbarSx}>
-        <Typography variant="h6">Dashboard</Typography>
-      </Toolbar>
-    ),
+    size: 'small',
+    title: 'Screen Title',
+    showBackArrow: false,
   },
   argTypes: {
-    position: {
+    size: {
       control: 'select',
-      options: ['fixed', 'absolute', 'sticky', 'static', 'relative'],
+      options: ['small', 'medium', 'large'],
     },
-    elevation: {
-      control: { type: 'number', min: 0, max: 4, step: 1 },
+    title: {
+      control: 'text',
     },
-    children: {
-      control: false,
-    },
-    sx: {
-      control: false,
+    showBackArrow: {
+      control: 'boolean',
     },
   },
   decorators: [
@@ -68,7 +50,7 @@ const meta = {
       </ThemeProvider>
     ),
   ],
-} satisfies Meta<typeof AppBar>;
+} satisfies Meta<typeof DSAppBar>;
 
 export default meta;
 
@@ -76,50 +58,24 @@ type Story = StoryObj<typeof meta>;
 
 export const Small: Story = {
   args: {
-    children: (
-      <Toolbar sx={toolbarSx}>
-        <Typography variant="h6">Dashboard</Typography>
-      </Toolbar>
-    ),
+    size: 'small',
+    title: 'Dashboard',
+    showBackArrow: false,
   },
 };
 
 export const WithBackArrow: Story = {
   args: {
-    children: (
-      <Toolbar sx={toolbarSx}>
-        <IconButton aria-label="Back">
-          <ArrowBack />
-        </IconButton>
-        <Typography variant="h6">Settings</Typography>
-      </Toolbar>
-    ),
+    size: 'small',
+    title: 'Settings',
+    showBackArrow: true,
   },
 };
 
 export const WithAvatar: Story = {
   args: {
-    children: (
-      <Toolbar sx={toolbarSx}>
-        <Typography
-          variant="h6"
-          sx={(theme) => ({
-            flexGrow: 1,
-          })}
-        >
-          Dashboard
-        </Typography>
-        <Avatar
-          sx={(theme) => ({
-            width: theme.spacing(10),
-            height: theme.spacing(10),
-            bgcolor: theme.palette.secondary.main,
-            color: theme.palette.secondary.contrastText,
-          })}
-        >
-          <Person />
-        </Avatar>
-      </Toolbar>
-    ),
+    size: 'small',
+    title: 'Dashboard',
+    rightElement: avatarElement,
   },
 };
