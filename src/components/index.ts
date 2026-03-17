@@ -30,3 +30,6 @@ export { default as DSCard } from './DSCard';
 export { default as DSTextField } from './DSTextField';
 export { default as DSAppBar } from './DSAppBar';
 export { default as DSNavigationBar } from './DSNavigationBar';
+export { default as DSBadge } from './DSBadge';
+
+export type { DSBadgeProps } from './DSBadge';
