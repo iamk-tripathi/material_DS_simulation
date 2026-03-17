@@ -1,0 +1,187 @@
+{
+  "fileKey": "BngXVKM7fJCug81GikRGiT",
+  "generatedAt": "2026-03-16",
+  "pages": [
+    {
+      "name": "Buttons",
+      "nodeId": "55141:14168",
+      "groups": [
+        {
+          "name": "Segmented button (examples)",
+          "variants": {
+            "Segments": ["2", "3", "4", "5"],
+            "Density": ["0", "-1", "-2", "-3"]
+          }
+        },
+        {
+          "name": "Segmented button building blocks",
+          "variants": {
+            "Position": ["Start", "Middle", "End"],
+            "Configuration": ["Icon only", "Label only", "Label & icon"],
+            "State": ["Enabled", "Hovered", "Focused", "Pressed", "Disabled"],
+            "Selected": ["True", "False"]
+          }
+        },
+        {
+          "name": "Toggle button",
+          "variants": {
+            "Type": ["Square", "Round"],
+            "Size": ["XSmall", "Small", "Medium", "Large", "XLarge"],
+            "State": ["Enabled", "Hovered", "Focused", "Pressed", "Disabled"],
+            "Selected": ["True", "False"]
+          }
+        },
+        {
+          "name": "Standard button group",
+          "variants": {
+            "Type": ["Round", "Square"],
+            "Size": ["XSmall", "Small", "Medium", "Large", "XLarge"],
+            "Style": ["Filled", "Outline", "Tonal"],
+            "Button type": ["Label", "Icon"]
+          }
+        },
+        {
+          "name": "Connected button group (examples)",
+          "variants": {
+            "Type": ["Round", "Square"],
+            "Size": ["XSmall", "Small", "Medium", "Large", "XLarge"]
+          }
+        },
+        {
+          "name": "Button group building blocks (connected segments)",
+          "variants": {
+            "Size": ["XSmall", "Small", "Medium", "Large", "XLarge"],
+            "Selected": ["True", "False"],
+            "State": ["Enabled", "Hovered", "Focused", "Pressed", "Disabled"]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lists",
+      "nodeId": "55141:14249",
+      "groups": [
+        {
+          "name": "Baseline list density",
+          "variants": {
+            "Density": ["0", "-2", "-4"]
+          }
+        },
+        {
+          "name": "Baseline list item (dense baseline)",
+          "variants": {
+            "Condition": ["1 line", "2 line", "3 line+"],
+            "Leading": ["None", "Monogram", "Icon", "Image", "Video", "Check Box", "Radio Button", "Switch"],
+            "Trailing": ["None", "Icon", "Check Box", "Radio Button", "Switch"],
+            "Show overline": ["True", "False"],
+            "Show supporting text": ["True", "False"]
+          }
+        },
+        {
+          "name": "New list types",
+          "variants": {
+            "Type": ["Standard", "Segmented (filled)", "Expandable", "Draggable", "Swipable - standard", "Swipable - segmented"],
+            "Multi-line": ["True", "False"]
+          }
+        },
+        {
+          "name": "List item building blocks",
+          "variants": {
+            "Alignment": ["Middle", "Top"],
+            "State": ["Enabled", "Hovered", "Focused", "Pressed", "Dragged", "Disabled"],
+            "Selected": ["True", "False"]
+          }
+        },
+        {
+          "name": "Accordion list item",
+          "variants": {
+            "Accordion": ["Collapsed", "Expanded"]
+          }
+        },
+        {
+          "name": "Swipe list item",
+          "variants": {
+            "Swipe state": ["Default", "Initiate reveal", "Revealed", "Swipe action"]
+          }
+        },
+        {
+          "name": "Leading element building blocks",
+          "variants": {
+            "Type": ["Icon", "Indent", "Image", "Video", "Avatar", "Icon button", "Checkbox", "Radio", "Switch", "Slot", "Type11"]
+          }
+        },
+        {
+          "name": "Trailing element building blocks",
+          "variants": {
+            "Type": ["Icon", "Trailing text only", "Checkbox", "Radio", "Switch", "Icon button", "Accordion button", "Slot"]
+          }
+        },
+        {
+          "name": "Content building blocks",
+          "variants": {
+            "Type": ["Text", "Slot"]
+          }
+        },
+        {
+          "name": "Reveal element building blocks",
+          "variants": {
+            "Actions": ["1", "2", "3"],
+            "Type": ["Initiate reveal", "Revealed", "Swipe action"]
+          }
+        },
+        {
+          "name": "Accordion button building blocks",
+          "variants": {
+            "Type": ["Expand", "Collapse"],
+            "State": ["Enabled", "Hovered", "Focused", "Pressed"]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sliders",
+      "nodeId": "55141:14255",
+      "groups": [
+        {
+          "name": "Standard slider",
+          "variants": {
+            "Orientation": ["Horizontal", "Vertical"],
+            "Size": ["XSmall", "Small", "Medium", "Large", "XLarge"],
+            "State": ["Enabled", "Hovered", "Pressed", "Disabled"],
+            "Value": ["0", "50", "100"]
+          }
+        },
+        {
+          "name": "Centered slider",
+          "variants": {
+            "Orientation": ["Horizontal", "Vertical"],
+            "Size": ["XSmall", "Small", "Medium", "Large", "XLarge"],
+            "State": ["Enabled", "Hovered", "Pressed", "Disabled"],
+            "Value": ["-50", "0", "+50"]
+          }
+        },
+        {
+          "name": "Range slider",
+          "variants": {
+            "Orientation": ["Horizontal"],
+            "Size": ["XSmall", "Small", "Medium", "Large", "XLarge"],
+            "State": ["Enabled", "Hovered", "Pressed", "Disabled"],
+            "Value": ["-50", "0", "+50"]
+          }
+        },
+        {
+          "name": "Slider building blocks",
+          "components": [
+            "Handle",
+            "Track stop",
+            "Inactive track left",
+            "Inactive track",
+            "Stops",
+            "Active track",
+            "Value indicator"
+          ]
+        }
+      ]
+    }
+  ]
+}

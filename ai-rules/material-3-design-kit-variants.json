@@ -1,0 +1,2129 @@
+{
+  "fileKey": "BngXVKM7fJCug81GikRGiT",
+  "generatedAt": "2026-03-17",
+  "pages": [
+    {
+      "name": "App bars",
+      "nodeId": "55141:14169",
+      "groups": [
+        {
+          "name": "App bar",
+          "variants": {
+            "Configuration": [
+              "Small-centered",
+              "Search",
+              "Small-image",
+              "Small",
+              "Medium",
+              "Large"
+            ],
+            "Elevation": [
+              "Flat",
+              "On-scroll"
+            ]
+          }
+        },
+        {
+          "name": "Building Blocks",
+          "variants": {
+            "Search bar/Alignment": [
+              "Left aligned",
+              "Centered"
+            ],
+            "Search bar/Elevation": [
+              "Flat",
+              "On-scroll"
+            ],
+            "App bar content text/Size": [
+              "Small",
+              "Medium",
+              "Large"
+            ],
+            "App bar content text/Alignment": [
+              "Centered",
+              "Left"
+            ],
+            "App bar content/Component": [
+              "Thumbnail",
+              "Avatar"
+            ],
+            "App bar content/Avatar size": [
+              "Image",
+              "Monogram"
+            ]
+          }
+        },
+        {
+          "name": "XR/XR App Bar",
+          "variants": {
+            "Elevation": [
+              "Surface container",
+              "Surface container high",
+              "Surface container highest"
+            ],
+            "Configuration": [
+              "Center-aligned",
+              "Small"
+            ]
+          }
+        },
+        {
+          "name": "Baseline (Bottom app bar)",
+          "variants": {
+            "Icons count": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Badges",
+      "nodeId": "55141:14167",
+      "groups": [
+        {
+          "name": "Badges",
+          "variants": {
+            "Size": [
+              "Small",
+              "Large"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Buttons",
+      "nodeId": "55141:14168",
+      "groups": [
+        {
+          "name": "Buttons (core button sets)",
+          "variants": {
+            "Toggle button/Type": [
+              "Square",
+              "Round"
+            ],
+            "Toggle button/Size": [
+              "XSmall",
+              "Small",
+              "Medium",
+              "Large",
+              "XLarge"
+            ],
+            "Toggle button/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Disabled"
+            ],
+            "Toggle button/Selected": [
+              "True",
+              "False"
+            ]
+          }
+        },
+        {
+          "name": "Segmented button",
+          "variants": {
+            "Segments": [
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "Density": [
+              "0",
+              "-1",
+              "-2",
+              "-3"
+            ]
+          }
+        },
+        {
+          "name": "Button groups",
+          "variants": {
+            "Standard button group/Type": [
+              "Round",
+              "Square"
+            ],
+            "Standard button group/Size": [
+              "XSmall",
+              "Small",
+              "Medium",
+              "Large",
+              "XLarge"
+            ],
+            "Standard button group/Style": [
+              "Filled",
+              "Outline",
+              "Tonal"
+            ],
+            "Standard button group/Button type": [
+              "Label",
+              "Icon"
+            ],
+            "Connected button group/Type": [
+              "Round",
+              "Square"
+            ],
+            "Connected button group/Size": [
+              "XSmall",
+              "Small",
+              "Medium",
+              "Large",
+              "XLarge"
+            ]
+          }
+        },
+        {
+          "name": "Building Blocks (segmented buttons, button groups)",
+          "variants": {
+            "Segmented button/Position": [
+              "Start",
+              "Middle",
+              "End"
+            ],
+            "Segmented button/Configuration": [
+              "Icon only",
+              "Label only",
+              "Label & icon"
+            ],
+            "Segmented button/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Disabled"
+            ],
+            "Segmented button/Selected": [
+              "True",
+              "False"
+            ],
+            "Button group connected segments/Size": [
+              "XSmall",
+              "Small",
+              "Medium",
+              "Large",
+              "XLarge"
+            ],
+            "Button group connected segments/Selected": [
+              "True",
+              "False"
+            ],
+            "Button group connected segments/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Disabled"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cards",
+      "nodeId": "55141:14171",
+      "groups": [
+        {
+          "name": "Stacked card",
+          "variants": {
+            "Style": [
+              "Outlined",
+              "Elevated",
+              "Filled"
+            ],
+            "Layout": [
+              "Media & text",
+              "Slot"
+            ]
+          }
+        },
+        {
+          "name": "Horizontal card",
+          "variants": {
+            "Style": [
+              "Outlined",
+              "Elevated",
+              "Filled"
+            ],
+            "Layout": [
+              "Media & text",
+              "Slot"
+            ]
+          }
+        },
+        {
+          "name": "Building Blocks (Card states)",
+          "variants": {
+            "Style": [
+              "Outlined",
+              "Elevated",
+              "Filled"
+            ],
+            "State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Dragged"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Carousel",
+      "nodeId": "55141:14172",
+      "groups": [
+        {
+          "name": "Carousel",
+          "variants": {
+            "Context": [
+              "Mobile",
+              "Tablet"
+            ],
+            "Layout": [
+              "Hero",
+              "Center-aligned hero",
+              "Multi-browse",
+              "Uncontained",
+              "Multi-aspect ratio"
+            ]
+          }
+        },
+        {
+          "name": "Carousel - Full screen",
+          "variants": {
+            "Context": [
+              "Mobile"
+            ],
+            "Layout": [
+              "Full screen"
+            ]
+          }
+        },
+        {
+          "name": "Building Blocks",
+          "variants": {
+            "Component": [
+              "General item",
+              "Multi-ratio items"
+            ],
+            "Multi-ratio items/Aspect ratio": [
+              "16:9",
+              "4:3",
+              "1:1",
+              "9:16",
+              "3:4"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Checkboxes",
+      "nodeId": "55141:14173",
+      "groups": [
+        {
+          "name": "Checkboxes",
+          "variants": {
+            "Type": [
+              "Selected",
+              "Indeterminate",
+              "Unselected",
+              "Error selected",
+              "Error indeterminate",
+              "Error unselected"
+            ],
+            "State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Disabled"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Chips",
+      "nodeId": "55141:14174",
+      "groups": [
+        {
+          "name": "Input chip",
+          "variants": {
+            "Configuration": [
+              "Label only",
+              "Label & leading icon",
+              "Label & avatar"
+            ],
+            "State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Dragged"
+            ],
+            "Selected": [
+              "True",
+              "False"
+            ],
+            "Show closing icon": [
+              "True",
+              "False"
+            ]
+          }
+        },
+        {
+          "name": "Assistive chip",
+          "variants": {
+            "Style": [
+              "Elevated",
+              "Outlined"
+            ],
+            "Configuration": [
+              "Label only",
+              "Label & icon",
+              "Label & favicon",
+              "Label & brand icon"
+            ],
+            "State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Dragged",
+              "Disabled"
+            ]
+          }
+        },
+        {
+          "name": "Filter chip",
+          "variants": {
+            "Style": [
+              "Elevated",
+              "Outlined"
+            ],
+            "Configuration": [
+              "Label only",
+              "Label & leading icon"
+            ],
+            "State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Dragged",
+              "Disabled"
+            ],
+            "Selected": [
+              "True",
+              "False"
+            ],
+            "Show trailing icon": [
+              "True",
+              "False"
+            ]
+          }
+        },
+        {
+          "name": "Suggestion chip",
+          "variants": {
+            "Style": [
+              "Elevated",
+              "Outlined"
+            ],
+            "State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Dragged",
+              "Disabled"
+            ],
+            "Selected": [
+              "True",
+              "False"
+            ],
+            "Show icon": [
+              "True",
+              "False"
+            ]
+          }
+        },
+        {
+          "name": "Chip groups",
+          "variants": {
+            "Type": [
+              "Input",
+              "Assistive",
+              "Filter",
+              "Suggestion"
+            ],
+            "Layout": [
+              "Single row - scrollable",
+              "Multiple rows - overflow"
+            ]
+          }
+        },
+        {
+          "name": "Building Blocks",
+          "components": [
+            "Building Blocks"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Date & time pickers",
+      "nodeId": "55141:14175",
+      "groups": [
+        {
+          "name": "Modal date picker",
+          "variants": {
+            "Type": [
+              "Day",
+              "Year",
+              "Full-screen range"
+            ]
+          }
+        },
+        {
+          "name": "Input date picker",
+          "variants": {
+            "Type": [
+              "Single input",
+              "Range"
+            ]
+          }
+        },
+        {
+          "name": "Docked input date picker [desktop]",
+          "variants": {
+            "Type": [
+              "Day",
+              "Month",
+              "Year"
+            ]
+          }
+        },
+        {
+          "name": "Building Blocks (calendar cell, year, menu button)",
+          "variants": {
+            "Calendar cell/Type": [
+              "Default",
+              "Today",
+              "Selected",
+              "Selected (Middle)",
+              "Prev/Next",
+              "Null"
+            ],
+            "Calendar cell/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Disabled"
+            ],
+            "Year/Selected": [
+              "True",
+              "False"
+            ],
+            "Year/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Disabled"
+            ],
+            "Menu button/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Disabled"
+            ]
+          }
+        },
+        {
+          "name": "Dial picker",
+          "variants": {
+            "Format": [
+              "12 hour",
+              "24 hour"
+            ],
+            "Orientation": [
+              "Vertical",
+              "Horizontal"
+            ]
+          }
+        },
+        {
+          "name": "Keyboard picker",
+          "variants": {
+            "Format": [
+              "12 hour",
+              "24 hour"
+            ]
+          }
+        },
+        {
+          "name": "Building blocks (time picker)",
+          "variants": {
+            "Hour/Selected": [
+              "True",
+              "False"
+            ],
+            "Hour/State": [
+              "Enabled",
+              "Hovered",
+              "Focused"
+            ],
+            "Input/Selected": [
+              "True",
+              "False"
+            ],
+            "Period selector/AM/PM": [
+              "True",
+              "False"
+            ],
+            "Period selector/State": [
+              "Enabled",
+              "Hovered",
+              "Focused"
+            ],
+            "Horizontal period selector/AM/PM": [
+              "True",
+              "False"
+            ],
+            "Horizontal period selector/State": [
+              "Enabled",
+              "Hovered",
+              "Focused"
+            ],
+            "Hour-line/Line-angle": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dialogs",
+      "nodeId": "55141:14176",
+      "groups": [
+        {
+          "name": "Basic dialog",
+          "variants": {
+            "Icon": [
+              "True",
+              "False"
+            ]
+          }
+        },
+        {
+          "name": "List dialog",
+          "variants": {
+            "Icon": [
+              "True",
+              "False"
+            ]
+          }
+        },
+        {
+          "name": "Scrollable list dialog",
+          "variants": {
+            "Icon": [
+              "True",
+              "False"
+            ]
+          }
+        },
+        {
+          "name": "XR/XR Dialog",
+          "variants": {
+            "Elevation": [
+              "Surface container high",
+              "Surface container highest"
+            ],
+            "Show icon": [
+              "True",
+              "False"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dividers",
+      "nodeId": "55141:14177",
+      "groups": [
+        {
+          "name": "Horizontal dividers",
+          "variants": {
+            "Type": [
+              "Full-width",
+              "Inset",
+              "Middle-inset",
+              "Divider with subhead"
+            ]
+          }
+        },
+        {
+          "name": "Vertical dividers",
+          "variants": {
+            "Type": [
+              "Full-width",
+              "Inset",
+              "Middle-inset"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lists",
+      "nodeId": "55141:14249",
+      "groups": [
+        {
+          "name": "Baseline list sets",
+          "variants": {
+            "Baseline list density/Density": [
+              "0",
+              "-2",
+              "-4"
+            ],
+            "Baseline list item/Condition": [
+              "1 line",
+              "2 line",
+              "3 line+"
+            ],
+            "Baseline list item/Leading": [
+              "None",
+              "Monogram",
+              "Icon",
+              "Image",
+              "Video",
+              "Check Box",
+              "Radio Button",
+              "Switch"
+            ],
+            "Baseline list item/Trailing": [
+              "None",
+              "Icon",
+              "Check Box",
+              "Radio Button",
+              "Switch"
+            ],
+            "Baseline list item/Show overline": [
+              "True",
+              "False"
+            ],
+            "Baseline list item/Show supporting text": [
+              "True",
+              "False"
+            ]
+          }
+        },
+        {
+          "name": "List (new variants)",
+          "variants": {
+            "Type": [
+              "Standard",
+              "Segmented (filled)",
+              "Expandable",
+              "Draggable",
+              "Swipable - standard",
+              "Swipable - segmented"
+            ],
+            "Multi-line": [
+              "True",
+              "False"
+            ]
+          }
+        },
+        {
+          "name": "Building blocks (list item, leading element, trailing element, content, reveal, accordion button)",
+          "variants": {
+            "List item/Alignment": [
+              "Middle",
+              "Top"
+            ],
+            "List item/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Dragged",
+              "Disabled"
+            ],
+            "List item/Selected": [
+              "True",
+              "False"
+            ],
+            "Accordion list item/Accordion": [
+              "Collapsed",
+              "Expanded"
+            ],
+            "Swipe list item/Swipe state": [
+              "Default",
+              "Initiate reveal",
+              "Revealed",
+              "Swipe action"
+            ],
+            "Leading element/Type": [
+              "Icon",
+              "Indent",
+              "Image",
+              "Video",
+              "Avatar",
+              "Icon button",
+              "Checkbox",
+              "Radio",
+              "Switch",
+              "Slot",
+              "Type11"
+            ],
+            "Trailing element/Type": [
+              "Icon",
+              "Trailing text only",
+              "Checkbox",
+              "Radio",
+              "Switch",
+              "Icon button",
+              "Accordion button",
+              "Slot"
+            ],
+            "Content/Type": [
+              "Text",
+              "Slot"
+            ],
+            "Reveal element/Actions": [
+              "1",
+              "2",
+              "3"
+            ],
+            "Reveal element/Type": [
+              "Initiate reveal",
+              "Revealed",
+              "Swipe action"
+            ],
+            "Accordion button/Type": [
+              "Expand",
+              "Collapse"
+            ],
+            "Accordion button/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Loading & progress",
+      "nodeId": "55141:14252",
+      "groups": [
+        {
+          "name": "Linear determinate progress indicator",
+          "variants": {
+            "Type": [
+              "Flat",
+              "Wave"
+            ],
+            "Thickness": [
+              "4 dp",
+              "8 dp"
+            ],
+            "Progress": [
+              "0",
+              "10",
+              "20",
+              "50",
+              "80",
+              "100"
+            ]
+          }
+        },
+        {
+          "name": "Linear indeterminate progress indicator",
+          "variants": {
+            "Type": [
+              "Flat",
+              "Wave"
+            ],
+            "Thickness": [
+              "4 dp",
+              "8 dp"
+            ],
+            "Step": [
+              "0",
+              "1",
+              "2"
+            ]
+          }
+        },
+        {
+          "name": "Circular determinate progress indicator",
+          "variants": {
+            "Type": [
+              "Flat",
+              "Wave"
+            ],
+            "Thickness": [
+              "4 dp",
+              "8 dp"
+            ],
+            "Progress": [
+              "0",
+              "10",
+              "30",
+              "50",
+              "80",
+              "100"
+            ]
+          }
+        },
+        {
+          "name": "Circular indeterminate progress indicator",
+          "variants": {
+            "Type": [
+              "Flat",
+              "Wave"
+            ],
+            "Thickness": [
+              "4 dp",
+              "8 dp"
+            ],
+            "Step": [
+              "1",
+              "2"
+            ]
+          }
+        },
+        {
+          "name": "Loading indicator",
+          "variants": {
+            "Steps": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7"
+            ],
+            "Show container": [
+              "True",
+              "False"
+            ]
+          }
+        },
+        {
+          "name": "Building Blocks (progress indicator segments)",
+          "variants": {
+            "Wave segment/height": [
+              "12"
+            ],
+            "Wave segment/thickness": [
+              "4",
+              "8"
+            ],
+            "Wave segment/wavelength": [
+              "20",
+              "40"
+            ],
+            "Component": [
+              "Stop",
+              "Segment - flat",
+              "Track"
+            ],
+            "Stop/width": [
+              "4",
+              "8"
+            ],
+            "Segment - flat/width": [
+              "4",
+              "8"
+            ],
+            "Track/width": [
+              "4",
+              "8"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Menu",
+      "nodeId": "55141:14250",
+      "groups": [
+        {
+          "name": "Menu (baseline)",
+          "variants": {
+            "Density": [
+              "0",
+              "-2",
+              "-4"
+            ]
+          }
+        },
+        {
+          "name": "Examples",
+          "components": [
+            "Examples"
+          ]
+        },
+        {
+          "name": "Building blocks (menu list items, leading/trailing elements)",
+          "variants": {
+            "Menu list item/Density": [
+              "0",
+              "-2",
+              "-4"
+            ],
+            "Menu list item/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Selected",
+              "Disabled"
+            ],
+            "Leading element/Type": [
+              "Icon",
+              "Indent"
+            ],
+            "Trailing element/Type": [
+              "Icon",
+              "Text"
+            ],
+            "Section label/Type": [
+              "Label-basic",
+              "Label-vibrant"
+            ]
+          }
+        },
+        {
+          "name": "Menu (standard/vibrant)",
+          "variants": {
+            "Theme": [
+              "Standard",
+              "Vibrant"
+            ],
+            "Groups": [
+              "1",
+              "2",
+              "3"
+            ]
+          }
+        },
+        {
+          "name": "Menu item variants",
+          "variants": {
+            "Theme": [
+              "Standard",
+              "Vibrant"
+            ],
+            "State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Disabled",
+              "Active"
+            ],
+            "Selected": [
+              "True",
+              "False"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Navigation",
+      "nodeId": "55141:14251",
+      "groups": [
+        {
+          "name": "Deprecated (Navigation Drawer, Nav item building blocks)",
+          "variants": {
+            "Component": [
+              "Navigation Drawer",
+              "Nav item building blocks"
+            ],
+            "Nav item/Selected": [
+              "True",
+              "False"
+            ],
+            "Nav item/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed"
+            ],
+            "Nav item/Show icon": [
+              "True",
+              "False"
+            ]
+          }
+        },
+        {
+          "name": "Navigation rail",
+          "variants": {
+            "Alignment": [
+              "Top",
+              "Middle"
+            ],
+            "Nav items": [
+              "3",
+              "4",
+              "5",
+              "6"
+            ]
+          }
+        },
+        {
+          "name": "Navigation rail expanded",
+          "variants": {
+            "Type": [
+              "Docked",
+              "Floating"
+            ],
+            "Alignment": [
+              "Top",
+              "Middle"
+            ],
+            "Nav items": [
+              "3",
+              "4",
+              "5",
+              "6"
+            ]
+          }
+        },
+        {
+          "name": "Navigation bar (horizontal and vertical items)",
+          "variants": {
+            "Orientation": [
+              "Horizontal",
+              "Vertical"
+            ],
+            "Nav items": [
+              "3",
+              "4",
+              "5",
+              "6"
+            ]
+          }
+        },
+        {
+          "name": "Building blocks (navigation rail/nav bar items)",
+          "variants": {
+            "Navigation rail item/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed"
+            ],
+            "Navigation rail item/Selected": [
+              "True",
+              "False"
+            ],
+            "Navigation rail item/Badge": [
+              "None",
+              "Small",
+              "Large"
+            ],
+            "Navigation rail item/Show label": [
+              "True",
+              "False"
+            ],
+            "Navigation bar item/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed"
+            ],
+            "Navigation bar item/Selected": [
+              "True",
+              "False"
+            ],
+            "Navigation bar item/Badge": [
+              "None",
+              "Small",
+              "Large"
+            ]
+          }
+        },
+        {
+          "name": "XR Navigation rail",
+          "variants": {
+            "Elevation": [
+              "Surface container"
+            ],
+            "Configuration": [
+              "Embedded FAB",
+              "No FAB"
+            ]
+          }
+        },
+        {
+          "name": "XR Navigation bar",
+          "variants": {
+            "Elevation": [
+              "Surface container"
+            ],
+            "Configuration": [
+              "Icon & label"
+            ],
+            "Segments": [
+              "3",
+              "4",
+              "5"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Radio button",
+      "nodeId": "55141:14253",
+      "groups": [
+        {
+          "name": "Radio buttons",
+          "variants": {
+            "Selected": [
+              "True",
+              "False"
+            ],
+            "State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Disabled"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Search",
+      "nodeId": "55141:14254",
+      "groups": [
+        {
+          "name": "Search bar",
+          "variants": {
+            "State": [
+              "Enabled",
+              "Hovered",
+              "Pressed"
+            ],
+            "Show avatar": [
+              "True",
+              "False"
+            ]
+          }
+        },
+        {
+          "name": "Search docked layout",
+          "variants": {
+            "Configuration": [
+              "Input text",
+              "Supporting text"
+            ]
+          }
+        },
+        {
+          "name": "Search full-screen layout",
+          "variants": {
+            "Configuration": [
+              "Input text",
+              "Supporting text"
+            ]
+          }
+        },
+        {
+          "name": "Baseline variants",
+          "components": [
+            "Baseline variants"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sheets",
+      "nodeId": "55141:14170",
+      "groups": [
+        {
+          "name": "Bottom sheet",
+          "variants": {
+            "Modal": [
+              "True",
+              "False"
+            ]
+          }
+        },
+        {
+          "name": "Side sheet",
+          "variants": {
+            "Type": [
+              "Standard",
+              "Modal"
+            ],
+            "Show back": [
+              "True",
+              "False"
+            ]
+          }
+        },
+        {
+          "name": "Building Blocks (Bottom sheets, Side sheets)",
+          "variants": {
+            "Bottom sheets/Layout": [
+              "Empty",
+              "Slot"
+            ],
+            "Side sheets/Layout": [
+              "Empty",
+              "Slot"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sliders",
+      "nodeId": "55141:14255",
+      "groups": [
+        {
+          "name": "Standard slider",
+          "variants": {
+            "Orientation": [
+              "Horizontal",
+              "Vertical"
+            ],
+            "Size": [
+              "XSmall",
+              "Small",
+              "Medium",
+              "Large",
+              "XLarge"
+            ],
+            "State": [
+              "Enabled",
+              "Hovered",
+              "Pressed",
+              "Disabled"
+            ],
+            "Value": [
+              "0",
+              "50",
+              "100"
+            ]
+          }
+        },
+        {
+          "name": "Centered slider",
+          "variants": {
+            "Orientation": [
+              "Horizontal",
+              "Vertical"
+            ],
+            "Size": [
+              "XSmall",
+              "Small",
+              "Medium",
+              "Large",
+              "XLarge"
+            ],
+            "State": [
+              "Enabled",
+              "Hovered",
+              "Pressed",
+              "Disabled"
+            ],
+            "Value": [
+              "-50",
+              "0",
+              "+50"
+            ]
+          }
+        },
+        {
+          "name": "Range slider",
+          "variants": {
+            "Orientation": [
+              "Horizontal"
+            ],
+            "Size": [
+              "XSmall",
+              "Small",
+              "Medium",
+              "Large",
+              "XLarge"
+            ],
+            "State": [
+              "Enabled",
+              "Hovered",
+              "Pressed",
+              "Disabled"
+            ],
+            "Value": [
+              "-50",
+              "0",
+              "+50"
+            ]
+          }
+        },
+        {
+          "name": "Building Blocks (slider components)",
+          "components": [
+            "Handle",
+            "Track stop",
+            "Inactive track (left)",
+            "Inactive track",
+            "Stops",
+            "Active track",
+            "Value indicator"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Switch",
+      "nodeId": "55141:14257",
+      "groups": [
+        {
+          "name": "Switch",
+          "variants": {
+            "Selected": [
+              "True",
+              "False"
+            ],
+            "State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Disabled"
+            ],
+            "Icon": [
+              "True",
+              "False"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tabs",
+      "nodeId": "55141:14258",
+      "groups": [
+        {
+          "name": "Tabs",
+          "variants": {
+            "Type": [
+              "Fixed",
+              "Scrollable"
+            ],
+            "Style": [
+              "Primary",
+              "Secondary"
+            ],
+            "Configuration": [
+              "Label only",
+              "Icon only",
+              "Label & icon"
+            ]
+          }
+        },
+        {
+          "name": "Building Blocks (Primary tabs, Secondary tabs)",
+          "variants": {
+            "Primary tabs/Configuration": [
+              "Icon and label",
+              "Icon only",
+              "Label only"
+            ],
+            "Primary tabs/Selected": [
+              "True",
+              "False"
+            ],
+            "Primary tabs/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed"
+            ],
+            "Secondary tabs/Configuration": [
+              "Label only",
+              "Icon and label"
+            ],
+            "Secondary tabs/Selected": [
+              "True",
+              "False"
+            ],
+            "Secondary tabs/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Text fields",
+      "nodeId": "55141:14259",
+      "groups": [
+        {
+          "name": "Text field",
+          "variants": {
+            "Style": [
+              "Filled",
+              "Outlined"
+            ],
+            "State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Error",
+              "Disabled"
+            ],
+            "Text configurations": [
+              "Input text",
+              "Label text",
+              "Placeholder text"
+            ],
+            "Leading icon": [
+              "True",
+              "False"
+            ],
+            "Trailing icon": [
+              "True",
+              "False"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Toolbars",
+      "nodeId": "58295:22726",
+      "groups": [
+        {
+          "name": "Toolbars (Standard, Vibrant)",
+          "variants": {
+            "Theme": [
+              "Standard",
+              "Vibrant"
+            ],
+            "Icon button/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Disabled"
+            ],
+            "Icon button toggleable/Selected": [
+              "True",
+              "False"
+            ],
+            "Icon button toggleable/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Disabled"
+            ],
+            "Button toggleable/Selected": [
+              "True",
+              "False"
+            ],
+            "Button toggleable/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Disabled"
+            ]
+          }
+        },
+        {
+          "name": "Examples and Usage",
+          "components": [
+            "Examples and Usage"
+          ]
+        },
+        {
+          "name": "Toolbar variants (configuration examples)",
+          "variants": {
+            "Configuration": [
+              "Floating",
+              "Docked"
+            ],
+            "Orientation": [
+              "Horizontal",
+              "Vertical"
+            ],
+            "Type": [
+              "Standard",
+              "Vibrant"
+            ]
+          }
+        },
+        {
+          "name": "XR/XR Toolbar",
+          "variants": {
+            "Elevation": [
+              "Surface container",
+              "Surface container high",
+              "Surface container highest",
+              "Tertiary container"
+            ],
+            "Orientation": [
+              "Horizontal",
+              "Vertical"
+            ]
+          }
+        },
+        {
+          "name": "XR building blocks (Surface, Surface high, Tertiary container)",
+          "variants": {
+            "Surface tier": [
+              "Surface container",
+              "Surface container high",
+              "Tertiary container"
+            ],
+            "Icon button/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Disabled"
+            ],
+            "Icon button toggleable/Selected": [
+              "True",
+              "False"
+            ],
+            "Icon button toggleable/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Disabled"
+            ],
+            "Button toggleable/Selected": [
+              "True",
+              "False"
+            ],
+            "Button toggleable/State": [
+              "Enabled",
+              "Hovered",
+              "Focused",
+              "Pressed",
+              "Disabled"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tooltips",
+      "nodeId": "55141:14261",
+      "groups": [
+        {
+          "name": "Plain Tooltip",
+          "variants": {
+            "Type": [
+              "Single line",
+              "Multi line"
+            ]
+          }
+        },
+        {
+          "name": "Rich Tooltip",
+          "variants": {
+            "Type": [
+              "Rich"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Avatars",
+      "nodeId": "55595:3788",
+      "groups": [
+        {
+          "name": "Generic avatar",
+          "variants": {
+            "Style": [
+              "Avatar",
+              "Monogram",
+              "Check"
+            ]
+          }
+        },
+        {
+          "name": "3D Avatars",
+          "variants": {
+            "Indexed variants": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Icons",
+      "nodeId": "55594:2483",
+      "groups": [
+        {
+          "name": "Icons (flat list of symbols)",
+          "components": [
+            "wifi",
+            "alarm",
+            "bluetooth",
+            "do_not_disturb_on",
+            "flashlight_on",
+            "keyboard_arrow_up",
+            "keyboard_arrow_down",
+            "menu",
+            "arrow_back",
+            "arrow_forward",
+            "check",
+            "close",
+            "add",
+            "stars_filled",
+            "stars",
+            "fast_rewind",
+            "skip_previous",
+            "play_arrow",
+            "fast_forward",
+            "skip_next",
+            "arrow_right",
+            "arrow_left",
+            "arrow_drop_up",
+            "arrow_drop_down",
+            "more_vert",
+            "directions_bus",
+            "directions_subway",
+            "directions_car",
+            "local_taxi",
+            "search",
+            "check_box",
+            "check_box",
+            "check_box_outline_blank",
+            "indeterminate_check_box",
+            "indeterminate_check_box",
+            "mail",
+            "bookmark",
+            "bookmark_filled",
+            "account_circle",
+            "person",
+            "chat_bubble",
+            "chat_bubble",
+            "light_mode",
+            "dark_mode",
+            "delete",
+            "radio_button_checked",
+            "radio_button_unchecked",
+            "star_filled",
+            "star",
+            "folder",
+            "folder_filled",
+            "chevron_backward",
+            "chevron_forward",
+            "upload",
+            "download",
+            "today",
+            "edit",
+            "cancel",
+            "keyboard",
+            "error",
+            "settings",
+            "settings",
+            "check_small",
+            "check_indeterminate_small",
+            "schedule",
+            "keyboard_return",
+            "sticker",
+            "mic",
+            "language",
+            "g_translate",
+            "archive",
+            "notifications",
+            "add_circle",
+            "commute",
+            "outbox",
+            "inbox",
+            "inbox",
+            "favorite",
+            "send",
+            "videocam",
+            "music_note",
+            "photo",
+            "list",
+            "play_arrow_filled",
+            "fast_rewind_filled",
+            "skip_previous_filled",
+            "skip_next_filled",
+            "fast_forward_filled",
+            "pause",
+            "text_fields",
+            "mood",
+            "directions_walk",
+            "accessibility",
+            "link",
+            "link_off",
+            "alarm",
+            "mic",
+            "share",
+            "comment",
+            "edit",
+            "image",
+            "videocam_off",
+            "archive",
+            "delete",
+            "mark_email_unread",
+            "snooze",
+            "front_hand",
+            "format_bold",
+            "format_italic",
+            "format_underlined",
+            "format_color_fill",
+            "tab",
+            "undo",
+            "format_color_text",
+            "redo",
+            "mic_off",
+            "videocam_off",
+            "call_end",
+            "front_hand",
+            "volume_up",
+            "menu_open",
+            "comment",
+            "reply",
+            "swap_horiz",
+            "swap_vert",
+            "mobile_check",
+            "attach_file",
+            "location_on",
+            "location_on",
+            "groups",
+            "keyboard_filled",
+            "schedule",
+            "move_item",
+            "drag_handle"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Examples",
+      "nodeId": "55594:2480",
+      "groups": [
+        {
+          "name": "Examples/Layout grid",
+          "variants": {
+            "Window size class": [
+              "Compact",
+              "Medium",
+              "Expanded",
+              "Large",
+              "Extra-large"
+            ],
+            "Layout regions": [
+              "None",
+              "Navigation region",
+              "Navigation expanded"
+            ]
+          }
+        },
+        {
+          "name": "Examples (Mobile, Web)",
+          "variants": {
+            "Platform": [
+              "Mobile",
+              "Web"
+            ],
+            "Screen": [
+              "Home",
+              "Upcoming",
+              "Detailed view",
+              "Reviews",
+              "Library",
+              "Gallery",
+              "Messaging"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Shape",
+      "nodeId": "58548:7093",
+      "groups": [
+        {
+          "name": "Shape scale (Group 1–10)",
+          "variants": {
+            "Group": [
+              "Group 1",
+              "Group 2",
+              "Group 3",
+              "Group 4",
+              "Group 5",
+              "Group 6",
+              "Group 7",
+              "Group 8",
+              "Group 9",
+              "Group 10"
+            ],
+            "Corner/shape size": [
+              "0dp",
+              "4dp",
+              "8dp",
+              "12dp",
+              "16dp",
+              "20dp",
+              "28dp",
+              "32dp",
+              "48dp",
+              "50%"
+            ],
+            "Size label": [
+              "None",
+              "Extra-small",
+              "Small",
+              "Medium",
+              "Large",
+              "Large-increased",
+              "Extra-large",
+              "Extra-large-increased",
+              "Extra-extra-large",
+              "Full"
+            ]
+          }
+        },
+        {
+          "name": "Shape Set",
+          "variants": {
+            "Shape": [
+              "Circle",
+              "Square",
+              "Slanted",
+              "Arch",
+              "Fan",
+              "Arrow",
+              "Semicircle",
+              "Oval",
+              "Pill",
+              "Triangle",
+              "Diamond",
+              "Hexagon",
+              "Pentagon",
+              "Gem",
+              "Very sunny",
+              "Sunny",
+              "4-sided cookie",
+              "6-sided cookie",
+              "7-sided cookie",
+              "9-sided cookie",
+              "12-sided cookie",
+              "Ghost-ish",
+              "4-leaf clover",
+              "8-leaf clover",
+              "Burst",
+              "Soft burst",
+              "Boom",
+              "Soft boom",
+              "Flower",
+              "Puffy",
+              "Puffy diamond",
+              "Pixel Circle",
+              "Pixel triangle",
+              "Bun",
+              "Heart"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Styles",
+      "nodeId": "49823:12141",
+      "groups": [
+        {
+          "name": "typescale (styles templates)",
+          "variants": {
+            "Template placeholders": [
+              "#Style",
+              "#Font",
+              "#FontSize",
+              "#LH",
+              "#Weight",
+              "#Width",
+              "#LetterSpacing"
+            ]
+          }
+        },
+        {
+          "name": "material-theme (Tonal palettes, Light theme, Dark theme)",
+          "components": [
+            "Tonal palettes",
+            "Light theme",
+            "Dark theme"
+          ]
+        },
+        {
+          "name": "Schematic group",
+          "components": [
+            "Schematic group"
+          ]
+        },
+        {
+          "name": "Elevation (Light, Dark)",
+          "variants": {
+            "Theme": [
+              "Light",
+              "Dark"
+            ],
+            "Elevation": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ]
+          }
+        },
+        {
+          "name": "Hidden Shape set (internal)",
+          "components": [
+            "Hidden Shape set (internal)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Utilities",
+      "nodeId": "55594:2484",
+      "groups": [
+        {
+          "name": "Keyboard",
+          "variants": {
+            "Configuration": [
+              "Base keyboard",
+              "Alphanumeric",
+              "Keypad",
+              "Numeric only"
+            ],
+            "Style": [
+              "Portrait",
+              "Landscape",
+              "Floating"
+            ]
+          }
+        },
+        {
+          "name": "Device frame",
+          "components": [
+            "Device frame"
+          ]
+        },
+        {
+          "name": "Building Blocks/status-bar",
+          "components": [
+            "Status-bar"
+          ]
+        },
+        {
+          "name": "Building Blocks/navigation",
+          "components": [
+            "Navigation"
+          ]
+        },
+        {
+          "name": "Scrim",
+          "components": [
+            "Scrim"
+          ]
+        },
+        {
+          "name": "Focus indicator",
+          "components": [
+            "Focus indicator"
+          ]
+        },
+        {
+          "name": "Shared Building Blocks/Slot-component",
+          "components": [
+            "Slot-component"
+          ]
+        }
+      ]
+    }
+  ]
+}
