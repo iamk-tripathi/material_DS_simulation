@@ -1,0 +1,74 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { DocSection, ComponentPreview } from './doc-components';
+import { Box, ThemeProvider, Typography } from '../components';
+import { theme } from '../theme/theme';
+
+<Meta title="DS / Tokens / Shape" />
+
+# Shape Tokens
+
+<DocSection title="Overview" description="Material Design 3 shape tokens define the corner-radius scale used to differentiate surfaces, controls, and rounded affordances.">
+  <p>The visible shape scale moves from square surfaces with no rounding through progressively softer corners to fully rounded circular and pill-like components.</p>
+</DocSection>
+
+<DocSection title="Shape Scale" description="The visible shape tokens, their dp values, corner radius values, and recommended component usage.">
+  <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+    <thead>
+      <tr>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Token name</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>dp value</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Corner radius</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Component usage</th>
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        ['None', '0dp', '0', 'No rounding. Used for full-bleed surfaces.'],
+        ['Extra-small', '4dp', '4', 'Chips, text fields, small components'],
+        ['Small', '8dp', '8', 'Cards (small), menus, snackbars'],
+        ['Medium', '12dp', '12', 'Cards (default), FAB (small)'],
+        ['Large', '16dp', '16', 'Bottom sheets, navigation drawers, extended FAB'],
+        ['Large-increased', '20dp', '20', 'This information is not visible in the provided material. Please confirm.'],
+        ['Extra-large', '28dp', '28', 'Dialogs, large FAB'],
+        ['Extra-large-increased', '32dp', '32', 'This information is not visible in the provided material. Please confirm.'],
+        ['Extra-extra-large', '48dp', '48', 'Bottom sheets (large)'],
+        ['Full', '50%', '1000', 'Badges, sliders, icon buttons, search bars'],
+      ].map((row) => (
+        <tr key={row[0]}>{row.map((cell, index) => <td key={index} style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: index === 0 ? 'monospace' : 'inherit' }}>{cell}</td>)}</tr>
+      ))}
+    </tbody>
+  </table>
+</DocSection>
+
+<DocSection title="Visual Examples" description="Shape tokens applied as live rounded surfaces using theme-based spacing values.">
+  <ComponentPreview caption="Shape Examples" note="Each example uses theme-based spacing to match the visible dp scale.">
+    <ThemeProvider theme={theme}>
+      <Box sx={(currentTheme) => ({ display: 'grid', gap: currentTheme.spacing(3) })}>
+        <Box sx={(currentTheme) => ({ display: 'flex', alignItems: 'center', gap: currentTheme.spacing(3) })}><Box sx={(currentTheme) => ({ width: currentTheme.spacing(20), height: currentTheme.spacing(10), backgroundColor: currentTheme.palette.primary.main, borderRadius: 0 })} /><Typography>None</Typography></Box>
+        <Box sx={(currentTheme) => ({ display: 'flex', alignItems: 'center', gap: currentTheme.spacing(3) })}><Box sx={(currentTheme) => ({ width: currentTheme.spacing(20), height: currentTheme.spacing(10), backgroundColor: currentTheme.palette.primary.main, borderRadius: currentTheme.spacing(1) })} /><Typography>Extra-small</Typography></Box>
+        <Box sx={(currentTheme) => ({ display: 'flex', alignItems: 'center', gap: currentTheme.spacing(3) })}><Box sx={(currentTheme) => ({ width: currentTheme.spacing(20), height: currentTheme.spacing(10), backgroundColor: currentTheme.palette.primary.main, borderRadius: currentTheme.spacing(2) })} /><Typography>Small</Typography></Box>
+        <Box sx={(currentTheme) => ({ display: 'flex', alignItems: 'center', gap: currentTheme.spacing(3) })}><Box sx={(currentTheme) => ({ width: currentTheme.spacing(20), height: currentTheme.spacing(10), backgroundColor: currentTheme.palette.primary.main, borderRadius: currentTheme.spacing(3) })} /><Typography>Medium</Typography></Box>
+        <Box sx={(currentTheme) => ({ display: 'flex', alignItems: 'center', gap: currentTheme.spacing(3) })}><Box sx={(currentTheme) => ({ width: currentTheme.spacing(20), height: currentTheme.spacing(10), backgroundColor: currentTheme.palette.primary.main, borderRadius: currentTheme.spacing(4) })} /><Typography>Large</Typography></Box>
+        <Box sx={(currentTheme) => ({ display: 'flex', alignItems: 'center', gap: currentTheme.spacing(3) })}><Box sx={(currentTheme) => ({ width: currentTheme.spacing(20), height: currentTheme.spacing(10), backgroundColor: currentTheme.palette.primary.main, borderRadius: currentTheme.spacing(5) })} /><Typography>Large-increased</Typography></Box>
+        <Box sx={(currentTheme) => ({ display: 'flex', alignItems: 'center', gap: currentTheme.spacing(3) })}><Box sx={(currentTheme) => ({ width: currentTheme.spacing(20), height: currentTheme.spacing(10), backgroundColor: currentTheme.palette.primary.main, borderRadius: currentTheme.spacing(7) })} /><Typography>Extra-large</Typography></Box>
+        <Box sx={(currentTheme) => ({ display: 'flex', alignItems: 'center', gap: currentTheme.spacing(3) })}><Box sx={(currentTheme) => ({ width: currentTheme.spacing(20), height: currentTheme.spacing(10), backgroundColor: currentTheme.palette.primary.main, borderRadius: currentTheme.spacing(8) })} /><Typography>Extra-large-increased</Typography></Box>
+        <Box sx={(currentTheme) => ({ display: 'flex', alignItems: 'center', gap: currentTheme.spacing(3) })}><Box sx={(currentTheme) => ({ width: currentTheme.spacing(20), height: currentTheme.spacing(10), backgroundColor: currentTheme.palette.primary.main, borderRadius: currentTheme.spacing(12) })} /><Typography>Extra-extra-large</Typography></Box>
+        <Box sx={(currentTheme) => ({ display: 'flex', alignItems: 'center', gap: currentTheme.spacing(3) })}><Box sx={(currentTheme) => ({ width: currentTheme.spacing(20), height: currentTheme.spacing(10), backgroundColor: currentTheme.palette.primary.main, borderRadius: currentTheme.spacing(250) })} /><Typography>Full</Typography></Box>
+      </Box>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Usage Rules" description="Material Design 3 guidance for matching shape scale to component type.">
+  <p><strong>Source: Material Design 3 specification</strong></p>
+  <ul>
+    <li>None (<code>0dp</code>) -&gt; No rounding. Used for full-bleed surfaces.</li>
+    <li>Extra-small (<code>4dp</code>) -&gt; Chips, text fields, small components.</li>
+    <li>Small (<code>8dp</code>) -&gt; Cards (small), menus, snackbars.</li>
+    <li>Medium (<code>12dp</code>) -&gt; Cards (default), FAB (small).</li>
+    <li>Large (<code>16dp</code>) -&gt; Bottom sheets, navigation drawers, extended FAB.</li>
+    <li>Extra-large (<code>28dp</code>) -&gt; Dialogs, large FAB.</li>
+    <li>Extra-extra-large (<code>48dp</code>) -&gt; Bottom sheets (large).</li>
+    <li>Full (<code>50%</code>) -&gt; Badges, sliders, icon buttons, search bars.</li>
+  </ul>
+</DocSection>

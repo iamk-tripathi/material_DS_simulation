@@ -130,4 +130,10 @@ This page documents the visible color reference tokens, semantic/system tokens, 
 - `Schemes/Surface Container Highest`
 
 ## Usage Rules
-- Reference tokens vs semantic tokens: This information is not visible in the provided material. Please confirm.
+### Source: Material Design 3 specification
+- Always use semantic tokens (`md.sys.color.*`) in components. Never use reference tokens (`md.ref.palette.*`) directly.
+- Reference tokens are for building and customising themes only.
+- Always pair a color role with its `on-` counterpart: primary background always uses `on-primary` for text/icons.
+- Surface container hierarchy (lowest to highest elevation): `surface-container-lowest` -> `surface-container-low` -> `surface-container` -> `surface-container-high` -> `surface-container-highest`
+- Error tokens are reserved for destructive actions and validation states only. Never use for decorative purposes.
+- Never use raw hex values in components — always reference theme tokens.

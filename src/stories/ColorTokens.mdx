@@ -1,0 +1,289 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { DocSection, ComponentPreview } from './doc-components';
+import { Box } from '../components';
+
+<Meta title="DS / Tokens / Color" />
+
+# Color Tokens
+
+<DocSection title="Overview" description="Material Design 3 color tokens define both the tonal palette used to build a theme and the semantic roles consumed by components.">
+  <p>Reference tokens describe the underlying tonal palettes. Semantic tokens describe the actual roles components should consume, such as primary, on-surface, or primary-container.</p>
+  <ul>
+    <li>Reference tokens: palette-building inputs</li>
+    <li>Semantic tokens: component-facing roles</li>
+    <li>Surface container tokens: elevation-aware surface hierarchy</li>
+  </ul>
+</DocSection>
+
+<DocSection title="Tonal Palettes" description="The visible tonal palette scales for primary, secondary, tertiary, error, neutral, and neutral-variant roles.">
+  <h3>Primary</h3>
+  <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
+    <thead>
+      <tr>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Token</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Hex</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Swatch</th>
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        ['M3/ref/primary/primary0', '#000000'],
+        ['M3/ref/primary/primary10', '#21005D'],
+        ['M3/ref/primary/primary20', '#381E72'],
+        ['M3/ref/primary/primary30', '#4F378B'],
+        ['M3/ref/primary/primary40', '#6750A4'],
+        ['M3/ref/primary/primary50', '#7F67BE'],
+        ['M3/ref/primary/primary60', '#9A82DB'],
+        ['M3/ref/primary/primary70', '#B69DF8'],
+        ['M3/ref/primary/primary80', '#D0BCFF'],
+        ['M3/ref/primary/primary90', '#EADDFF'],
+        ['M3/ref/primary/primary95', '#F6EDFF'],
+        ['M3/ref/primary/primary99', '#FFFBFE'],
+        ['M3/ref/primary/primary100', '#FFFFFF'],
+      ].map(([token, hex]) => (
+        <tr key={token}>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: 'monospace' }}>{token}</td>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: 'monospace' }}>{hex}</td>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}><span style={{ display: 'inline-block', width: '24px', height: '24px', borderRadius: '999px', backgroundColor: hex, border: '1px solid #CAC4D0' }} /></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <h3>Secondary</h3>
+  <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
+    <thead>
+      <tr>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Token</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Hex</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Swatch</th>
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        ['M3/ref/secondary/secondary0', '#000000'],
+        ['M3/ref/secondary/secondary10', '#1D192B'],
+        ['M3/ref/secondary/secondary20', '#332D41'],
+        ['M3/ref/secondary/secondary30', '#4A4458'],
+        ['M3/ref/secondary/secondary40', '#625B71'],
+        ['M3/ref/secondary/secondary50', '#7A7289'],
+        ['M3/ref/secondary/secondary60', '#958DA5'],
+        ['M3/ref/secondary/secondary70', '#B0A7C0'],
+        ['M3/ref/secondary/secondary80', '#CCC2DC'],
+        ['M3/ref/secondary/secondary90', '#E8DEF8'],
+        ['M3/ref/secondary/secondary95', '#F6EDFF'],
+        ['M3/ref/secondary/secondary99', '#FFFBFE'],
+        ['M3/ref/secondary/secondary100', '#FFFFFF'],
+      ].map(([token, hex]) => (
+        <tr key={token}>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: 'monospace' }}>{token}</td>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: 'monospace' }}>{hex}</td>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}><span style={{ display: 'inline-block', width: '24px', height: '24px', borderRadius: '999px', backgroundColor: hex, border: '1px solid #CAC4D0' }} /></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <h3>Tertiary</h3>
+  <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
+    <thead>
+      <tr>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Token</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Hex</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Swatch</th>
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        ['M3/ref/tertiary/tertiary0', '#000000'],
+        ['M3/ref/tertiary/tertiary10', '#31111D'],
+        ['M3/ref/tertiary/tertiary20', '#492532'],
+        ['M3/ref/tertiary/tertiary30', '#633B48'],
+        ['M3/ref/tertiary/tertiary40', '#7D5260'],
+        ['M3/ref/tertiary/tertiary50', '#986977'],
+        ['M3/ref/tertiary/tertiary60', '#B58392'],
+        ['M3/ref/tertiary/tertiary70', '#D29DAC'],
+        ['M3/ref/tertiary/tertiary80', '#EFB8C8'],
+        ['M3/ref/tertiary/tertiary90', '#FFD8E4'],
+        ['M3/ref/tertiary/tertiary95', '#FFECF1'],
+        ['M3/ref/tertiary/tertiary99', '#FFFBFA'],
+        ['M3/ref/tertiary/tertiary100', '#FFFFFF'],
+      ].map(([token, hex]) => (
+        <tr key={token}>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: 'monospace' }}>{token}</td>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: 'monospace' }}>{hex}</td>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}><span style={{ display: 'inline-block', width: '24px', height: '24px', borderRadius: '999px', backgroundColor: hex, border: '1px solid #CAC4D0' }} /></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <h3>Error</h3>
+  <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
+    <thead>
+      <tr>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Token</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Hex</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Swatch</th>
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        ['M3/ref/error/error0', '#000000'],
+        ['M3/ref/error/error10', '#410E0B'],
+        ['M3/ref/error/error20', '#601410'],
+        ['M3/ref/error/error30', '#8C1D18'],
+        ['M3/ref/error/error40', '#B3261E'],
+        ['M3/ref/error/error50', '#DC362E'],
+        ['M3/ref/error/error60', '#E46962'],
+        ['M3/ref/error/error70', '#EC928E'],
+        ['M3/ref/error/error80', '#F2B8B5'],
+        ['M3/ref/error/error90', '#F9DEDC'],
+        ['M3/ref/error/error95', '#FCEEEE'],
+        ['M3/ref/error/error99', '#FFFBF9'],
+        ['M3/ref/error/error100', '#FFFFFF'],
+      ].map(([token, hex]) => (
+        <tr key={token}>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: 'monospace' }}>{token}</td>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: 'monospace' }}>{hex}</td>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}><span style={{ display: 'inline-block', width: '24px', height: '24px', borderRadius: '999px', backgroundColor: hex, border: '1px solid #CAC4D0' }} /></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <h3>Neutral</h3>
+  <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
+    <thead>
+      <tr>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Token</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Hex</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Swatch</th>
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        ['M3/ref/neutral/neutral0', '#000000'],
+        ['M3/ref/neutral/neutral10', '#1D1B20'],
+        ['M3/ref/neutral/neutral20', '#322F35'],
+        ['M3/ref/neutral/neutral30', '#48464C'],
+        ['M3/ref/neutral/neutral40', '#605D64'],
+        ['M3/ref/neutral/neutral50', '#79767D'],
+        ['M3/ref/neutral/neutral60', '#938F96'],
+        ['M3/ref/neutral/neutral70', '#AEA9B1'],
+        ['M3/ref/neutral/neutral80', '#CAC5CD'],
+        ['M3/ref/neutral/neutral90', '#E6E0E9'],
+        ['M3/ref/neutral/neutral95', '#F5EFF7'],
+        ['M3/ref/neutral/neutral99', '#FFFBFF'],
+        ['M3/ref/neutral/neutral100', '#FFFFFF'],
+      ].map(([token, hex]) => (
+        <tr key={token}>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: 'monospace' }}>{token}</td>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: 'monospace' }}>{hex}</td>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}><span style={{ display: 'inline-block', width: '24px', height: '24px', borderRadius: '999px', backgroundColor: hex, border: '1px solid #CAC4D0' }} /></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <h3>Neutral Variant</h3>
+  <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '0' }}>
+    <thead>
+      <tr>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Token</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Hex</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Swatch</th>
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        ['M3/ref/neutral-variant/neutral-variant0', '#000000'],
+        ['M3/ref/neutral-variant/neutral-variant10', '#1D1A22'],
+        ['M3/ref/neutral-variant/neutral-variant20', '#322F37'],
+        ['M3/ref/neutral-variant/neutral-variant30', '#49454F'],
+        ['M3/ref/neutral-variant/neutral-variant40', '#605D66'],
+        ['M3/ref/neutral-variant/neutral-variant50', '#79747E'],
+        ['M3/ref/neutral-variant/neutral-variant60', '#938F99'],
+        ['M3/ref/neutral-variant/neutral-variant70', '#AEA9B4'],
+        ['M3/ref/neutral-variant/neutral-variant80', '#CAC4D0'],
+        ['M3/ref/neutral-variant/neutral-variant90', '#E7E0EC'],
+        ['M3/ref/neutral-variant/neutral-variant95', '#F5EEFA'],
+        ['M3/ref/neutral-variant/neutral-variant99', '#FFFBFE'],
+        ['M3/ref/neutral-variant/neutral-variant100', '#FFFFFF'],
+      ].map(([token, hex]) => (
+        <tr key={token}>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: 'monospace' }}>{token}</td>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: 'monospace' }}>{hex}</td>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}><span style={{ display: 'inline-block', width: '24px', height: '24px', borderRadius: '999px', backgroundColor: hex, border: '1px solid #CAC4D0' }} /></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</DocSection>
+
+<DocSection title="Semantic Tokens (Light theme)" description="The visible light-theme semantic tokens and the roles they map to.">
+  <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+    <thead>
+      <tr>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Token</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Value</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Hex</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Swatch</th>
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        ['Schemes/On Surface', 'on-surface', '#1D1B20'],
+        ['M3/sys/light/on-surface', 'light on-surface', '#1D1B20'],
+        ['M3/sys/light/on-surface-variant', 'light on-surface-variant', '#49454F'],
+        ['M3/sys/light/outline-variant', 'light outline-variant', '#CAC4D0'],
+        ['Schemes/Primary', 'primary', '#6750A4'],
+        ['M3/sys/light/primary', 'light primary', '#6750A4'],
+        ['Schemes/Primary Container', 'primary-container', '#EADDFF'],
+        ['M3/sys/light/primary-container', 'light primary-container', '#EADDFF'],
+        ['Schemes/Secondary Container', 'secondary-container', '#E8DEF8'],
+        ['M3/sys/light/secondary-container', 'light secondary-container', '#E8DEF8'],
+        ['Add-ons/Section background', 'add-on section background', '#F5F5F5'],
+        ['M3/.add-on/Section background', 'add-on section background', '#F5F5F5'],
+      ].map(([token, value, hex]) => (
+        <tr key={token}>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: 'monospace' }}>{token}</td>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>{value}</td>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: 'monospace' }}>{hex}</td>
+          <td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}><span style={{ display: 'inline-block', width: '24px', height: '24px', borderRadius: '999px', backgroundColor: hex, border: '1px solid #CAC4D0' }} /></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</DocSection>
+
+<DocSection title="Surface Container Hierarchy" description="The five visible surface-container levels from lowest to highest elevation.">
+  <ComponentPreview caption="Surface Containers" note="Lowest to highest: surface-container-lowest, low, default, high, highest.">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '100%' }}>
+      {[
+        ['Surface Container Lowest', '#FFFFFF'],
+        ['Surface Container Low', '#F7F2FA'],
+        ['Surface Container', '#F3EDF7'],
+        ['Surface Container High', '#ECE6F0'],
+        ['Surface Container Highest', '#E6E0E9'],
+      ].map(([label, hex]) => (
+        <div key={label} style={{ backgroundColor: hex, border: '1px solid #CAC4D0', borderRadius: '8px', padding: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span style={{ color: '#1C1B1F', fontWeight: 600 }}>{label}</span>
+          <span style={{ color: '#49454F', fontFamily: 'monospace' }}>{hex}</span>
+        </div>
+      ))}
+    </div>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Usage Rules" description="Material Design 3 guidance for component token usage.">
+  <p><strong>Source: Material Design 3 specification</strong></p>
+  <ul>
+    <li>Always use semantic tokens (md.sys.color.*) in components. Never use reference tokens (md.ref.palette.*) directly.</li>
+    <li>Reference tokens are for building and customising themes only.</li>
+    <li>Always pair a color role with its on- counterpart: primary background always uses on-primary for text/icons.</li>
+    <li>Surface container hierarchy (lowest to highest elevation): surface-container-lowest -> surface-container-low -> surface-container -> surface-container-high -> surface-container-highest.</li>
+    <li>Error tokens are reserved for destructive actions and validation states only. Never use for decorative purposes.</li>
+    <li>Never use raw hex values in components - always reference theme tokens.</li>
+  </ul>
+</DocSection>

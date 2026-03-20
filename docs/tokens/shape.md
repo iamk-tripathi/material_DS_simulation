@@ -19,4 +19,12 @@ This page documents the visible shape scale values and corner radius values prov
 | `Full` | `50%` | `1000` |
 
 ## Usage
-- Which scale value maps to which component size: This information is not visible in the provided material. Please confirm.
+### Source: Material Design 3 specification
+- None (`0dp`) -> No rounding. Used for full-bleed surfaces.
+- Extra-small (`4dp`) -> Chips, text fields, small components.
+- Small (`8dp`) -> Cards (small), menus, snackbars.
+- Medium (`12dp`) -> Cards (default), FAB (small).
+- Large (`16dp`) -> Bottom sheets, navigation drawers, extended FAB.
+- Extra-large (`28dp`) -> Dialogs, large FAB.
+- Extra-extra-large (`48dp`) -> Bottom sheets (large).
+- Full (`50%`) -> Badges, sliders, icon buttons, search bars.

@@ -1,0 +1,203 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { DocSection, ComponentPreview } from './doc-components';
+import { Box, ThemeProvider, Typography } from '../components';
+import { theme } from '../theme/theme';
+
+<Meta title="DS / Tokens / Typography" />
+
+# Typography Tokens
+
+<DocSection title="Overview" description="Material Design 3 typography tokens define a scale for expressive display text, structured headings, titles, labels, and body copy.">
+  <p>The visible typescale groups typography into Display, Headline, Title, Label, and Body. Each token defines font family, size, weight, line height, and letter spacing.</p>
+</DocSection>
+
+<DocSection title="Display" description="Large-format expressive text for hero moments and the strongest visual hierarchy.">
+  <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
+    <thead>
+      <tr>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Token</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Font</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Size</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Weight</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Line Height</th>
+        <th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Letter Spacing</th>
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        ['M3/display/large', 'Roboto', '57', 'Regular', '64', '-0.25'],
+        ['M3/display/medium', 'Roboto', '45', 'Regular', '52', '0'],
+        ['M3/display/small', 'Roboto', '36', 'Regular', '44', '0'],
+        ['M3/display/large-emphasized', 'Roboto', '57', 'Medium', '64', '-0.25'],
+        ['M3/display/medium-emphasized', 'Roboto', '45', 'Medium', '52', '0'],
+        ['M3/display/small-emphasized', 'Roboto', '36', 'Medium', '44', '0'],
+      ].map((row) => (
+        <tr key={row[0]}>
+          {row.map((cell, index) => (
+            <td key={index} style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: index === 0 ? 'monospace' : 'inherit' }}>{cell}</td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  <ComponentPreview caption="Display Live Example">
+    <ThemeProvider theme={theme}>
+      <Box sx={(currentTheme) => ({ display: 'flex', flexDirection: 'column', gap: currentTheme.spacing(2) })}>
+        <Typography sx={{ fontFamily: 'Roboto', fontSize: '57px', lineHeight: '64px', letterSpacing: '-0.25px', fontWeight: 400 }}>Display Large</Typography>
+        <Typography sx={{ fontFamily: 'Roboto', fontSize: '45px', lineHeight: '52px', letterSpacing: '0px', fontWeight: 400 }}>Display Medium</Typography>
+        <Typography sx={{ fontFamily: 'Roboto', fontSize: '36px', lineHeight: '44px', letterSpacing: '0px', fontWeight: 500 }}>Display Small Emphasized</Typography>
+      </Box>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Headline" description="Section-level headings and strong content hierarchy inside screens.">
+  <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
+    <thead><tr><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Token</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Font</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Size</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Weight</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Line Height</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Letter Spacing</th></tr></thead>
+    <tbody>
+      {[
+        ['M3/headline/large', 'Roboto', '32', 'Regular', '40', '0'],
+        ['M3/headline/medium', 'Roboto', '28', 'Regular', '36', '0'],
+        ['M3/headline/small', 'Roboto', '24', 'Regular', '32', '0'],
+        ['M3/headline/large-emphasized', 'Roboto', '32', 'Medium', '40', '0'],
+        ['M3/headline/medium-emphasized', 'Roboto', '28', 'Medium', '36', '0'],
+        ['M3/headline/small-emphasized', 'Roboto', '24', 'Medium', '32', '0'],
+      ].map((row) => (
+        <tr key={row[0]}>{row.map((cell, index) => <td key={index} style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: index === 0 ? 'monospace' : 'inherit' }}>{cell}</td>)}</tr>
+      ))}
+    </tbody>
+  </table>
+  <ComponentPreview caption="Headline Live Example">
+    <ThemeProvider theme={theme}>
+      <Box sx={(currentTheme) => ({ display: 'flex', flexDirection: 'column', gap: currentTheme.spacing(2) })}>
+        <Typography sx={{ fontFamily: 'Roboto', fontSize: '32px', lineHeight: '40px', letterSpacing: '0px', fontWeight: 400 }}>Headline Large</Typography>
+        <Typography sx={{ fontFamily: 'Roboto', fontSize: '28px', lineHeight: '36px', letterSpacing: '0px', fontWeight: 400 }}>Headline Medium</Typography>
+        <Typography sx={{ fontFamily: 'Roboto', fontSize: '24px', lineHeight: '32px', letterSpacing: '0px', fontWeight: 500 }}>Headline Small Emphasized</Typography>
+      </Box>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Title" description="Compact headings for app bars, card titles, and grouped content blocks.">
+  <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
+    <thead><tr><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Token</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Font</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Size</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Weight</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Line Height</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Letter Spacing</th></tr></thead>
+    <tbody>
+      {[
+        ['M3/title/large', 'Roboto', '22', 'Regular', '28', '0'],
+        ['M3/title/medium', 'Roboto', '16', 'Medium', '24', '0.15000000596046448'],
+        ['M3/title/small', 'Roboto', '14', 'Medium', '20', '0.10000000149011612'],
+        ['M3/title/large-emphasized', 'Roboto', '22', 'Medium', '28', '0'],
+        ['M3/title/medium-emphasized', 'Roboto', '16', 'SemiBold', '24', '0.15000000596046448'],
+        ['M3/title/small-emphasized', 'Roboto', '14', 'SemiBold', '20', '0.10000000149011612'],
+      ].map((row) => (
+        <tr key={row[0]}>{row.map((cell, index) => <td key={index} style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: index === 0 ? 'monospace' : 'inherit' }}>{cell}</td>)}</tr>
+      ))}
+    </tbody>
+  </table>
+  <ComponentPreview caption="Title Live Example">
+    <ThemeProvider theme={theme}>
+      <Box sx={(currentTheme) => ({ display: 'flex', flexDirection: 'column', gap: currentTheme.spacing(2) })}>
+        <Typography sx={{ fontFamily: 'Roboto', fontSize: '22px', lineHeight: '28px', letterSpacing: '0px', fontWeight: 400 }}>Title Large</Typography>
+        <Typography sx={{ fontFamily: 'Roboto', fontSize: '16px', lineHeight: '24px', letterSpacing: '0.15px', fontWeight: 500 }}>Title Medium</Typography>
+        <Typography sx={{ fontFamily: 'Roboto', fontSize: '14px', lineHeight: '20px', letterSpacing: '0.1px', fontWeight: 600 }}>Title Small Emphasized</Typography>
+      </Box>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Label" description="Action labels and compact emphasis for buttons, tabs, chips, and controls.">
+  <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
+    <thead><tr><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Token</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Font</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Size</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Weight</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Line Height</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Letter Spacing</th></tr></thead>
+    <tbody>
+      {[
+        ['M3/label/large', 'Roboto', '14', 'Medium', '20', '0.10000000149011612'],
+        ['M3/label/medium', 'Roboto', '12', 'Medium', '16', '0.5'],
+        ['M3/label/small', 'Roboto', '11', 'Medium', '16', '0.5'],
+        ['M3/label/large-emphasized', 'Roboto', '14', 'SemiBold', '20', '0.10000000149011612'],
+        ['M3/label/medium-emphasized', 'Roboto', '12', 'SemiBold', '16', '0.5'],
+        ['M3/label/small-emphasized', 'Roboto', '11', 'SemiBold', '16', '0.5'],
+      ].map((row) => (
+        <tr key={row[0]}>{row.map((cell, index) => <td key={index} style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: index === 0 ? 'monospace' : 'inherit' }}>{cell}</td>)}</tr>
+      ))}
+    </tbody>
+  </table>
+  <ComponentPreview caption="Label Live Example">
+    <ThemeProvider theme={theme}>
+      <Box sx={(currentTheme) => ({ display: 'flex', flexDirection: 'column', gap: currentTheme.spacing(2) })}>
+        <Typography sx={{ fontFamily: 'Roboto', fontSize: '14px', lineHeight: '20px', letterSpacing: '0.1px', fontWeight: 500 }}>Label Large</Typography>
+        <Typography sx={{ fontFamily: 'Roboto', fontSize: '12px', lineHeight: '16px', letterSpacing: '0.5px', fontWeight: 500 }}>Label Medium</Typography>
+        <Typography sx={{ fontFamily: 'Roboto', fontSize: '11px', lineHeight: '16px', letterSpacing: '0.5px', fontWeight: 600 }}>Label Small Emphasized</Typography>
+      </Box>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Body" description="Paragraph and supporting copy used throughout app content.">
+  <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
+    <thead><tr><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Token</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Font</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Size</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Weight</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Line Height</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Letter Spacing</th></tr></thead>
+    <tbody>
+      {[
+        ['M3/body/large', 'Roboto', '16', 'Regular', '24', '0.5'],
+        ['M3/body/medium', 'Roboto', '14', 'Regular', '20', '0.25'],
+        ['M3/body/small', 'Roboto', '12', 'Regular', '16', '0.4000000059604645'],
+        ['M3/body/large-emphasized', 'Roboto', '16', 'Medium', '24', '0.5'],
+        ['M3/body/medium-emphasized', 'Roboto', '14', 'Medium', '20', '0.25'],
+        ['M3/body/small-emphasized', 'Roboto', '12', 'Medium', '16', '0.4000000059604645'],
+      ].map((row) => (
+        <tr key={row[0]}>{row.map((cell, index) => <td key={index} style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: index === 0 ? 'monospace' : 'inherit' }}>{cell}</td>)}</tr>
+      ))}
+    </tbody>
+  </table>
+  <ComponentPreview caption="Body Live Example">
+    <ThemeProvider theme={theme}>
+      <Box sx={(currentTheme) => ({ display: 'flex', flexDirection: 'column', gap: currentTheme.spacing(2) })}>
+        <Typography sx={{ fontFamily: 'Roboto', fontSize: '16px', lineHeight: '24px', letterSpacing: '0.5px', fontWeight: 400 }}>Body Large supports comfortable reading for longer passages.</Typography>
+        <Typography sx={{ fontFamily: 'Roboto', fontSize: '14px', lineHeight: '20px', letterSpacing: '0.25px', fontWeight: 400 }}>Body Medium is the default supporting text size for many components.</Typography>
+        <Typography sx={{ fontFamily: 'Roboto', fontSize: '12px', lineHeight: '16px', letterSpacing: '0.4px', fontWeight: 500 }}>Body Small Emphasized helps secondary metadata stand out slightly.</Typography>
+      </Box>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Elevation" description="The visible light and dark elevation levels 1 through 5.">
+  <h3>Light Theme</h3>
+  <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
+    <thead><tr><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Token</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Shadow</th></tr></thead>
+    <tbody>
+      {[
+        ['M3/Elevation Light/1', 'drop-shadow(#00000026, x0 y1 blur3 spread1) + drop-shadow(#0000004D, x0 y1 blur2 spread0)'],
+        ['M3/Elevation Light/2', 'drop-shadow(#00000026, x0 y2 blur6 spread2) + drop-shadow(#0000004D, x0 y1 blur2 spread0)'],
+        ['M3/Elevation Light/3', 'drop-shadow(#0000004D, x0 y1 blur3 spread0) + drop-shadow(#00000026, x0 y4 blur8 spread3)'],
+        ['M3/Elevation Light/4', 'drop-shadow(#0000004D, x0 y2 blur3 spread0) + drop-shadow(#00000026, x0 y6 blur10 spread4)'],
+        ['M3/Elevation Light/5', 'drop-shadow(#0000004D, x0 y4 blur4 spread0) + drop-shadow(#00000026, x0 y8 blur12 spread6)'],
+      ].map((row) => (
+        <tr key={row[0]}><td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: 'monospace' }}>{row[0]}</td><td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>{row[1]}</td></tr>
+      ))}
+    </tbody>
+  </table>
+  <h3>Dark Theme</h3>
+  <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+    <thead><tr><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Token</th><th style={{ textAlign: 'left', padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>Shadow</th></tr></thead>
+    <tbody>
+      {[
+        ['M3/Elevation Dark/1', 'drop-shadow(#0000004D, x0 y1 blur2 spread0) + drop-shadow(#00000026, x0 y1 blur3 spread1)'],
+        ['M3/Elevation Dark/2', 'drop-shadow(#0000004D, x0 y1 blur2 spread0) + drop-shadow(#00000026, x0 y2 blur6 spread2)'],
+        ['M3/Elevation Dark/3', 'drop-shadow(#0000004D, x0 y1 blur3 spread0) + drop-shadow(#00000026, x0 y4 blur8 spread3)'],
+        ['M3/Elevation Dark/4', 'drop-shadow(#0000004D, x0 y2 blur3 spread0) + drop-shadow(#00000026, x0 y6 blur10 spread4)'],
+        ['M3/Elevation Dark/5', 'drop-shadow(#0000004D, x0 y4 blur4 spread0) + drop-shadow(#00000026, x0 y8 blur12 spread6)'],
+      ].map((row) => (
+        <tr key={row[0]}><td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC', fontFamily: 'monospace' }}>{row[0]}</td><td style={{ padding: '8px 0', borderBottom: '1px solid #E7E0EC' }}>{row[1]}</td></tr>
+      ))}
+    </tbody>
+  </table>
+</DocSection>
+
+<DocSection title="Usage Rules" description="Recommended UI usage for each level of the Material Design 3 type scale.">
+  <ul>
+    <li>Display: hero text, large empty states, and the strongest expressive moments.</li>
+    <li>Headline: page sections, feature headings, and primary content grouping.</li>
+    <li>Title: app bars, card titles, sheet titles, and compact heading surfaces.</li>
+    <li>Label: buttons, chips, tabs, toggles, and compact control text.</li>
+    <li>Body: paragraph text, supporting text, metadata, and longer-form reading.</li>
+  </ul>
+</DocSection>
