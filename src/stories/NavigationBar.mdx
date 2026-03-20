@@ -1,0 +1,128 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as NavigationBarStories from './DSNavigationBar.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+import { Box, DSNavigationBar, Favorite, Home, Person, Search, Settings, ThemeProvider } from '../components';
+import { theme } from '../theme/theme';
+
+<Meta of={NavigationBarStories} />
+
+# Navigation Bar
+
+Navigation Bar presents a small set of destinations for moving between primary sections. It adapts the same destination model across bottom bar, rail, and drawer presentations so navigation can match the available space.
+
+## Variants
+
+<DocSection title="Bar" description="Use for primary destination switching in compact mobile layouts.">
+  <ComponentPreview caption="Navigation Bar" note="Bottom bar works best when the destination set stays between two and five items.">
+    <ThemeProvider theme={theme}>
+      <DSNavigationBar
+        items={[
+          { label: 'Home', icon: <Home /> },
+          { label: 'Search', icon: <Search /> },
+          { label: 'Profile', icon: <Person /> },
+        ]}
+        activeIndex={0}
+        onChange={() => undefined}
+        variant="bar"
+      />
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Rail" description="Use when more vertical space is available and destinations should remain persistently visible.">
+  <ComponentPreview caption="Navigation Rail" note="Rail is a good fit for tablet or split-panel layouts.">
+    <ThemeProvider theme={theme}>
+      <DSNavigationBar
+        items={[
+          { label: 'Home', icon: <Home /> },
+          { label: 'Search', icon: <Search /> },
+          { label: 'Profile', icon: <Person /> },
+        ]}
+        activeIndex={1}
+        onChange={() => undefined}
+        variant="rail"
+        alignment="top"
+      />
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Drawer" description="Use when destination labels need more room and a side panel is appropriate.">
+  <ComponentPreview caption="Navigation Drawer" note="Drawer is useful when the layout can support a permanent side navigation region.">
+    <ThemeProvider theme={theme}>
+      <Box sx={{ position: 'relative', minHeight: theme.spacing(48) }}>
+        <DSNavigationBar
+          items={[
+            { label: 'Home', icon: <Home /> },
+            { label: 'Search', icon: <Search /> },
+            { label: 'Profile', icon: <Person /> },
+          ]}
+          activeIndex={2}
+          onChange={() => undefined}
+          variant="drawer"
+        />
+      </Box>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Five Destinations" description="Use only when the destination set is still scannable and all five items are truly primary.">
+  <ComponentPreview caption="Five-Item Navigation" note="Five is the upper limit; beyond that the pattern should change.">
+    <Story of={NavigationBarStories.FiveItems} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Keep destination count between two and five',
+    'Use short clear labels that map to primary app sections',
+    'Choose bar, rail, or drawer based on available space and navigation prominence',
+    'Keep the selected destination clearly visible',
+    'Use drawer only when the layout can support a persistent side region',
+  ]}
+  donts={[
+    'Cram more than five primary destinations into the pattern',
+    'Use vague labels that overlap in meaning',
+    'Mix top-level and secondary destinations together',
+    'Change presentation type without a layout reason',
+    'Rely on icons alone when labels are needed for clarity',
+  ]}
+/>
+
+## Props
+
+<Controls of={NavigationBarStories.Default} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    { name: 'palette.background.paper', value: '#FFFBFE', role: 'Navigation surface', preview: '#FFFBFE' },
+    { name: 'spacing(1)', value: '4px', role: 'Bar vertical padding' },
+    { name: 'spacing(4)', value: '16px', role: 'Rail vertical padding and drawer top padding' },
+    { name: 'spacing(2)', value: '8px', role: 'Rail item gap' },
+    { name: 'spacing(60)', value: '240px', role: 'Drawer width' },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Selected Destination">
+  The currently active destination should remain visually distinct so users always know where they are.
+</DocSection>
+
+<DocSection title="Assistive Technology">
+  Screen reader labeling, current-page announcement, and keyboard interaction details are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'App Bar', href: '/?path=/docs/ds-app-bar--docs', description: 'App bar frames the current screen while navigation bar changes destinations' },
+    { label: 'Badge', href: '/?path=/docs/ds-badge--docs', description: 'Badges often attach to navigation destinations' },
+    { label: 'Tab', href: '/?path=/docs/ds-tab--docs', description: 'Tabs switch peer views, while navigation bar changes primary sections' },
+  ]}
+/>

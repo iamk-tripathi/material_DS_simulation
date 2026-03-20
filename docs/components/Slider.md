@@ -3,29 +3,41 @@
 Slider
 
 ### Overview
-- This information is not visible in the provided material. Please confirm.
-- This information is not visible in the provided material. Please confirm.
+- Slider adjusts a value across a constrained range through direct manipulation.
+- It solves the need to select continuous values, bipolar values, and min-max ranges with one control family.
 
 ### Usage
-- This information is not visible in the provided material. Please confirm.
-- This information is not visible in the provided material. Please confirm.
-- This information is not visible in the provided material. Please confirm.
+- Used for tuning levels, filters, ranges, and continuous settings.
+- Typical scenarios include standard single-value sliders, centered sliders for bipolar values, range sliders, vertical sliders, and disabled value displays.
+- Context of use: continuous value selection.
 
 ### Structure
-- Variants: `Standard slider | Centered slider | Range slider`
-- Orientation: `Horizontal | Vertical`
-- Size: `XSmall | Small | Medium | Large | XLarge`
-- States: `Enabled | Hovered | Pressed | Disabled`
+- Variants: `standard`, `centered`, `range`
+- Orientations: `horizontal`, `vertical`
+- Sizes: `xsmall`, `small`, `medium`, `large`, `xlarge`
+- States: `enabled`, `hovered`, `pressed`, `disabled`
+- Standard slider defaults to a value between `0` and `100`.
+- Centered and range sliders operate across `-100` to `100`.
 
 ### Properties
-- Tokens used: This information is not visible in the provided material. Please confirm.
-- Configurable properties: `variant`, `orientation`, `size`, `state`, `value`
+- Tokens used:
+- `palette.primary.main` (`#6750A4`) for the active track
+- `palette.primary.dark` for pressed active track state
+- `spacing(40)` (`160px`) for horizontal width or vertical height
+- `spacing(3)` (`12px`) through `spacing(7)` (`28px`) for thumb sizes by scale
+- Native Material slider marks for non-range variants
+- Configurable properties:
+- `variant?: 'standard' | 'centered' | 'range'`
+- `orientation?: 'horizontal' | 'vertical'`
+- `size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'`
+- `state?: 'enabled' | 'hovered' | 'pressed' | 'disabled'`
+- `value?: number | number[]`
 
 ### Accessibility Considerations
-- Contrast: This information is not visible in the provided material. Please confirm.
-- Interaction states: `Enabled | Hovered | Pressed | Disabled`
+- Disabled state is visible through the native disabled control treatment.
+- Keyboard increment behavior, value text announcements, and aria-valuetext: This information is not visible in the provided material. Please confirm.
 - Screen reader label/aria attributes: This information is not visible in the provided material. Please confirm.
 
 ### Guidelines
-- This information is not visible in the provided material. Please confirm.
-- This information is not visible in the provided material. Please confirm.
+- Use centered sliders only when the value meaning changes around a midpoint.
+- Use range sliders for lower and upper bounds rather than two separate standard sliders.

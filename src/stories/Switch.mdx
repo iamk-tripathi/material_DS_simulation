@@ -1,0 +1,109 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as SwitchStories from './DSSwitch.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={SwitchStories} />
+
+# Switch
+
+Switch toggles an immediate on or off setting. It is the right choice when a preference takes effect as soon as the control changes, without requiring an extra confirmation step.
+
+## Variants
+
+<DocSection title="Selected" description="Use when the setting is currently on.">
+  <ComponentPreview caption="Selected Switch" note="Selected should correspond to a live setting state, not a pending form value.">
+    <Story of={SwitchStories.Selected} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Unselected" description="Use when the setting is currently off.">
+  <ComponentPreview caption="Unselected Switch" note="Use clear labels so on and off remain easy to interpret.">
+    <Story of={SwitchStories.Unselected} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="With Icon" description="Use only when the icon reinforces the on or off meaning.">
+  <ComponentPreview caption="Switch With Icon" note="Icon support should clarify the state, not decorate it.">
+    <Story of={SwitchStories.WithIcon} />
+  </ComponentPreview>
+</DocSection>
+
+## States
+
+<DocSection title="Hovered" description="Use to preview hover feedback on the switch.">
+  <ComponentPreview caption="Hovered Switch" note="Hover feedback should stay subtle relative to the selected state.">
+    <Story of={SwitchStories.Hovered} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Focused" description="Use when keyboard focus reaches the control.">
+  <ComponentPreview caption="Focused Switch" note="Visible focus is essential for settings panels and preference lists.">
+    <Story of={SwitchStories.Focused} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Pressed" description="Use to preview active press feedback.">
+  <ComponentPreview caption="Pressed Switch" note="Pressed state should reinforce touch or click without obscuring meaning.">
+    <Story of={SwitchStories.Pressed} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Disabled" description="Use when the setting cannot currently be changed.">
+  <ComponentPreview caption="Disabled Switch" note="Explain disabled settings nearby whenever possible.">
+    <Story of={SwitchStories.Disabled} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use switch for immediate binary settings',
+    'Pair each switch with a clear text label',
+    'Keep visible focus treatment intact',
+    'Use icon support only when it clarifies state meaning',
+    'Explain disabled settings when users might expect them to be editable',
+  ]}
+  donts={[
+    'Use switch for a choice that still needs submission',
+    'Use switch in place of radio buttons for exclusive options',
+    'Decorate the switch with unrelated icons',
+    'Rely on color alone to explain on and off',
+    'Hide the effect of a setting behind unclear wording',
+  ]}
+/>
+
+## Props
+
+<Controls of={SwitchStories.Selected} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    { name: 'palette.primary.main', value: '#6750A4', role: 'Focused outline emphasis', preview: '#6750A4' },
+    { name: 'palette.action.hover', value: 'Theme hover action token', role: 'Hovered switch surface' },
+    { name: 'palette.action.selected', value: 'Theme selected action token', role: 'Pressed switch surface' },
+    { name: 'spacing(0.25)', value: '1px', role: 'Focused outline thickness' },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Immediate Effect">
+  Use switch only when the state change applies immediately and the label makes the on or off meaning obvious.
+</DocSection>
+
+<DocSection title="Assistive Technology">
+  Keyboard interaction and aria-checked labeling are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Checkbox', href: '/?path=/docs/ds-checkbox--docs', description: 'Use checkbox for form-style selection rather than immediate settings' },
+    { label: 'Radio Button', href: '/?path=/docs/ds-radio-button--docs', description: 'Use radio buttons for exclusive choices in a set' },
+    { label: 'List', href: '/?path=/docs/ds-list--docs', description: 'Switches often live inside settings lists' },
+  ]}
+/>

@@ -1,0 +1,126 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as CarouselStories from './DSCarousel.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={CarouselStories} />
+
+# Carousel
+
+Carousel presents browsable content collections across mobile and tablet contexts. It solves the need to surface multiple related items in a horizontally scrollable format with different layout densities.
+
+## Variants
+
+<DocSection title="Hero Mobile" description="Use for a large hero-style carousel in a mobile context.">
+  <ComponentPreview caption="Hero Mobile" note="This is the default mobile hero layout with a standard aspect ratio.">
+    <Story of={CarouselStories.HeroMobile} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Center Aligned Hero" description="Use when the hero layout should feel more centered and framed.">
+  <ComponentPreview caption="Center Aligned Hero" note="Center-aligned hero shifts the visual emphasis toward a more framed presentation.">
+    <Story of={CarouselStories.CenterAlignedHero} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Multi Browse Tablet" description="Use when tablet layouts need multiple browsable cards in view.">
+  <ComponentPreview caption="Multi Browse Tablet" note="Tablet context increases the visible item count and supports denser browsing.">
+    <Story of={CarouselStories.MultiBrowseTablet} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Full Screen" description="Use when the carousel itself should expand into a larger presentation surface.">
+  <ComponentPreview caption="Full Screen" note="Full-screen mode increases the width and height of the visible carousel cards.">
+    <Story of={CarouselStories.FullScreen} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Multi Aspect Ratio" description="Use when carousel items need a different image or media ratio.">
+  <ComponentPreview caption="Multi Aspect Ratio" note="Aspect ratio can shift independently from the overall layout pattern.">
+    <Story of={CarouselStories.MultiAspectRatio} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Choose the carousel layout based on browsing density and context',
+    'Match mobile and tablet contexts to the intended item count',
+    'Use aspect ratio intentionally to support the content type',
+    'Keep card content concise enough for horizontal browsing',
+    'Use full-screen layout only when stronger immersion is needed',
+  ]}
+  donts={[
+    'Use the same density for every context by default',
+    'Overfill carousel cards with dense text',
+    'Mix unrelated aspect ratios without a content reason',
+    'Use full-screen layout when standard browsing is enough',
+    'Treat carousel as a replacement for long-form list content',
+  ]}
+/>
+
+## Props
+
+<Controls of={CarouselStories.HeroMobile} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    {
+      name: 'palette.background.paper',
+      value: '#FFFBFE',
+      role: 'Carousel card surface',
+      preview: '#FFFBFE',
+    },
+    {
+      name: 'spacing(72)',
+      value: '288px',
+      role: 'Standard carousel width',
+    },
+    {
+      name: 'spacing(96)',
+      value: '384px',
+      role: 'Full-screen carousel width',
+    },
+    {
+      name: 'spacing(40)',
+      value: '160px',
+      role: 'Default card min width',
+    },
+    {
+      name: 'spacing(28)',
+      value: '112px',
+      role: 'Multi-browse card min width',
+    },
+    {
+      name: 'spacing(3)',
+      value: '12px',
+      role: 'Card content padding and carousel gap',
+    },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Contrast">
+  Carousel cards use the paper surface token, but contrast guidance beyond that is not visible in the provided material. Please confirm.
+</DocSection>
+
+<DocSection title="Interaction States">
+  Interaction states are not explicitly visible in the provided material. Please confirm.
+</DocSection>
+
+<DocSection title="Screen Reader">
+  Screen reader label and aria details are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Card', href: '/?path=/docs/ds-card--docs', description: 'Carousel items are presented as repeated card surfaces' },
+    { label: 'Button', href: '/?path=/docs/ds-button--docs', description: 'Carousel cards often contain action buttons' },
+    { label: 'Sheet', href: '/?path=/docs/ds-sheet--docs', description: 'Sheets can hold extended carousel-related content or details' },
+  ]}
+/>

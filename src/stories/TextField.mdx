@@ -1,0 +1,137 @@
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
+import * as TextFieldStories from './DSTextField.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+import { DSTextField, ThemeProvider } from '../components';
+import { theme } from '../theme/theme';
+
+<Meta of={TextFieldStories} />
+
+# Text Field
+
+Text Field captures user-entered text with labeled input variants and state feedback. It solves the need to collect form input while keeping labels, helper text, and validation states readable.
+
+## Variants
+
+<DocSection title="Filled" description="Use inside surfaces where the input needs a stronger background treatment.">
+  <ComponentPreview caption="Filled Text Field" note="Use the filled variant inside grouped surfaces or denser form areas.">
+    <ThemeProvider theme={theme}>
+      <DSTextField variant="filled" label="Label" helperText="Helper text" />
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Outlined" description="Use on plain backgrounds where the field boundary should remain clearly visible.">
+  <ComponentPreview caption="Outlined Text Field" note="Use the outlined variant when the surrounding surface is already visually quiet.">
+    <ThemeProvider theme={theme}>
+      <DSTextField variant="outlined" label="Label" helperText="Helper text" />
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+## States
+
+<DocSection title="Error" description="Use when validation fails and the user needs correction guidance.">
+  <ComponentPreview caption="Error Text Field" note="Always pair the error state with helper text that explains the issue.">
+    <ThemeProvider theme={theme}>
+      <DSTextField variant="outlined" label="Email" helperText="Error state" error />
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Disabled" description="Use when input is temporarily unavailable.">
+  <ComponentPreview caption="Disabled Text Field" note="Only disable a field when it will become available again or is conditionally unavailable.">
+    <ThemeProvider theme={theme}>
+      <DSTextField variant="outlined" label="Label" helperText="Disabled field" disabled />
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Focused" description="Use to communicate the current active input target.">
+  <ComponentPreview caption="Focused Text Field" note="Focused fields should remain visually distinct from surrounding form controls.">
+    <ThemeProvider theme={theme}>
+      <DSTextField variant="outlined" state="focused" label="Label" helperText="Helper text" />
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Always provide a visible label',
+    'Use helper text to clarify input expectations or validation',
+    'Match filled and outlined variants to the surrounding surface',
+    'Use error state only when validation fails',
+    'Keep field labels and helper text concise',
+  ]}
+  donts={[
+    'Use placeholder text as the only label',
+    'Disable fields without explaining availability through context',
+    'Mix filled and outlined fields randomly in the same form section',
+    'Use error styling without helpful guidance',
+    'Rely on color alone to communicate field state',
+  ]}
+/>
+
+## Props
+
+<Controls of={TextFieldStories.Outlined} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    {
+      name: 'palette.error.main',
+      value: '#B3261E',
+      role: 'Error state color',
+      preview: '#B3261E',
+    },
+    {
+      name: 'palette.action.hover',
+      value: 'This information is not visible in the provided material. Please confirm.',
+      role: 'Hovered field background',
+    },
+    {
+      name: 'typography.fontFamily',
+      value: 'Roboto',
+      role: 'Text field font family',
+    },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Keyboard Navigation">
+  Users should be able to tab into the field, type, and move between fields without losing visible focus.
+</DocSection>
+
+<DocSection title="Screen Reader">
+  Text fields should keep a visible label and helper text relationship so the input purpose remains clear.
+</DocSection>
+
+<DocSection title="Contrast">
+  Error and focus treatments should remain distinguishable, and validation should not rely on color alone.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    {
+      label: 'Button',
+      href: '/?path=/docs/ds-button--docs',
+      description: 'Forms commonly pair inputs with button actions',
+    },
+    {
+      label: 'Search',
+      href: '/?path=/docs/ds-search--docs',
+      description: 'Search patterns often build on text input behavior',
+    },
+    {
+      label: 'Dialog',
+      href: '/?path=/docs/ds-dialog--docs',
+      description: 'Dialogs frequently contain short forms and validation states',
+    },
+  ]}
+/>

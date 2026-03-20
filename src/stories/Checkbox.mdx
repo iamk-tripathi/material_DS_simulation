@@ -1,0 +1,142 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as CheckboxStories from './DSCheckbox.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={CheckboxStories} />
+
+# Checkbox
+
+Checkbox expresses a selection state through selected, indeterminate, and unselected visual treatments. It solves the need to show compact multi-select state with clear interaction feedback.
+
+## Variants
+
+<DocSection title="Selected" description="Use when the option is selected.">
+  <ComponentPreview caption="Selected Checkbox" note="This is the default checked state for a standard checkbox.">
+    <Story of={CheckboxStories.Selected} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Indeterminate" description="Use when a parent selection is partially complete.">
+  <ComponentPreview caption="Indeterminate Checkbox" note="Use this state to represent partial selection across a related group.">
+    <Story of={CheckboxStories.Indeterminate} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Unselected" description="Use when the option is available but not selected.">
+  <ComponentPreview caption="Unselected Checkbox" note="This is the resting state before the user makes a selection.">
+    <Story of={CheckboxStories.Unselected} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Error Selected" description="Use when selection is present but the field is in an error condition.">
+  <ComponentPreview caption="Error Checkbox" note="Use the error variant only when validation requires attention.">
+    <Story of={CheckboxStories.ErrorSelected} />
+  </ComponentPreview>
+</DocSection>
+
+## States
+
+<DocSection title="Hovered" description="Use to preview pointer hover feedback.">
+  <ComponentPreview caption="Hovered Checkbox" note="Hover state adds an action hover surface behind the control.">
+    <Story of={CheckboxStories.Hovered} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Focused" description="Use when keyboard focus is on the checkbox.">
+  <ComponentPreview caption="Focused Checkbox" note="Focused state adds a visible outline for keyboard navigation.">
+    <Story of={CheckboxStories.Focused} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Pressed" description="Use to preview active press feedback.">
+  <ComponentPreview caption="Pressed Checkbox" note="Pressed state uses the selected action surface to reinforce interaction.">
+    <Story of={CheckboxStories.Pressed} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Disabled" description="Use when the option is temporarily unavailable.">
+  <ComponentPreview caption="Disabled Checkbox" note="Only disable a checkbox when the option cannot currently be changed.">
+    <Story of={CheckboxStories.Disabled} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use checkbox only for selection state',
+    'Use indeterminate for partial group selection',
+    'Pair checkbox state with a clear text label',
+    'Use the error variant only for validation issues',
+    'Preserve visible focus feedback for keyboard users',
+  ]}
+  donts={[
+    'Use checkbox for mutually exclusive choices',
+    'Use error styling without validation context',
+    'Remove hover, focus, or pressed feedback',
+    'Disable a checkbox without surrounding context',
+    'Rely on color alone to convey selection state',
+  ]}
+/>
+
+## Props
+
+<Controls of={CheckboxStories.Selected} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    {
+      name: 'palette.primary.main',
+      value: '#6750A4',
+      role: 'Selected checkbox color',
+      preview: '#6750A4',
+    },
+    {
+      name: 'palette.error.main',
+      value: '#B3261E',
+      role: 'Error checkbox color',
+      preview: '#B3261E',
+    },
+    {
+      name: 'palette.action.hover',
+      value: 'This information is not visible in the provided material. Please confirm.',
+      role: 'Hovered background surface',
+    },
+    {
+      name: 'palette.action.selected',
+      value: 'This information is not visible in the provided material. Please confirm.',
+      role: 'Pressed background surface',
+    },
+    {
+      name: 'spacing(0.25)',
+      value: '1px',
+      role: 'Focused outline thickness',
+    },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Contrast">
+  Primary and error states use distinct semantic colors, but selection meaning should not rely on color alone.
+</DocSection>
+
+<DocSection title="Interaction States">
+  Enabled, hovered, focused, pressed, and disabled states are all visible in the implementation.
+</DocSection>
+
+<DocSection title="Screen Reader">
+  Screen reader label and aria details are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Radio Button', href: '/?path=/docs/ds-radio-button--docs', description: 'Use radio buttons for mutually exclusive choices' },
+    { label: 'Switch', href: '/?path=/docs/ds-switch--docs', description: 'Use switches for immediate on/off toggles' },
+    { label: 'List', href: '/?path=/docs/ds-list--docs', description: 'Lists often contain selectable controls' },
+  ]}
+/>

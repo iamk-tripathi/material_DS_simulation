@@ -1,0 +1,153 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as ChipStories from './DSChip.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={ChipStories} />
+
+# Chip
+
+Chip communicates compact input, assistive, filter, suggestion, and grouped choices in a small surface. It solves the need to show concise labels, lightweight actions, and filter states without taking up much space.
+
+## Variants
+
+<DocSection title="Input" description="Use when the chip represents user-provided or removable input.">
+  <ComponentPreview caption="Input Chip" note="This example shows an input chip with avatar configuration and a closing icon.">
+    <Story of={ChipStories.Input} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Assistive Elevated" description="Use for compact assistive actions with stronger emphasis.">
+  <ComponentPreview caption="Assistive Elevated Chip" note="Elevated chips add shadow and read as a slightly stronger surface.">
+    <Story of={ChipStories.AssistiveElevated} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Filter Selected" description="Use when a filter choice is selected and should remain visible.">
+  <ComponentPreview caption="Filter Chip" note="Selected filter chips can also show a trailing icon to reinforce state.">
+    <Story of={ChipStories.FilterSelected} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Suggestion With Icon" description="Use for suggestion-style chips that include a supporting icon.">
+  <ComponentPreview caption="Suggestion Chip" note="Suggestion chips stay compact while still carrying a lightweight icon treatment.">
+    <Story of={ChipStories.SuggestionWithIcon} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Group Overflow" description="Use when multiple chips need to wrap into an overflow layout.">
+  <ComponentPreview caption="Chip Group" note="Grouped chips can switch between a single row and multiple-row overflow behavior.">
+    <Story of={ChipStories.GroupOverflow} />
+  </ComponentPreview>
+</DocSection>
+
+## States
+
+<DocSection title="Hovered" description="Use to preview pointer hover feedback.">
+  <ComponentPreview caption="Hovered Chip" note="Hover should reinforce that the chip is interactive without changing its role.">
+    <Story of={ChipStories.Hovered} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Focused" description="Use when keyboard focus is on the chip.">
+  <ComponentPreview caption="Focused Chip" note="Focused chips show a visible outline based on the primary color token.">
+    <Story of={ChipStories.Focused} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Pressed" description="Use to preview active press feedback.">
+  <ComponentPreview caption="Pressed Chip" note="Pressed state should feel responsive while preserving chip readability.">
+    <Story of={ChipStories.Pressed} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Dragged" description="Use when the chip is actively being moved or reordered.">
+  <ComponentPreview caption="Dragged Chip" note="Dragged chips use the selected action surface to differentiate the state.">
+    <Story of={ChipStories.Dragged} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Disabled" description="Use when the chip is temporarily unavailable.">
+  <ComponentPreview caption="Disabled Chip" note="Disabled chips should remain readable while clearly unavailable.">
+    <Story of={ChipStories.Disabled} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use chip variants consistently within the same flow',
+    'Keep chip labels short and scannable',
+    'Use selected state to reinforce active filters',
+    'Use grouped chips when multiple compact choices belong together',
+    'Keep focus and drag feedback visible for interactive chips',
+  ]}
+  donts={[
+    'Use chips as the primary call-to-action on a screen',
+    'Mix too many chip styles without hierarchy',
+    'Use long sentences inside chip labels',
+    'Hide the selected state for active filter chips',
+    'Rely on shadow alone to communicate chip emphasis',
+  ]}
+/>
+
+## Props
+
+<Controls of={ChipStories.Input} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    {
+      name: 'palette.primary.main',
+      value: '#6750A4',
+      role: 'Selected chip and focused outline color',
+      preview: '#6750A4',
+    },
+    {
+      name: 'palette.action.selected',
+      value: 'This information is not visible in the provided material. Please confirm.',
+      role: 'Dragged chip background',
+    },
+    {
+      name: 'shadows[1]',
+      value: 'This information is not visible in the provided material. Please confirm.',
+      role: 'Elevated chip shadow',
+    },
+    {
+      name: 'spacing(2)',
+      value: '8px',
+      role: 'Gap between grouped chips',
+    },
+    {
+      name: 'spacing(0.25)',
+      value: '1px',
+      role: 'Focused outline thickness',
+    },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Contrast">
+  Selected, focused, and dragged chips rely on visible surface changes, but meaning should not depend on color alone.
+</DocSection>
+
+<DocSection title="Interaction States">
+  Enabled, hovered, focused, pressed, dragged, and disabled states are all represented in the implementation.
+</DocSection>
+
+<DocSection title="Screen Reader">
+  Screen reader label and aria details are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Button', href: '/?path=/docs/ds-button--docs', description: 'Buttons cover higher-emphasis actions than chips' },
+    { label: 'Search', href: '/?path=/docs/ds-search--docs', description: 'Search patterns often pair with suggestion and filter chips' },
+    { label: 'List', href: '/?path=/docs/ds-list--docs', description: 'Lists can host grouped filter and assistive chips' },
+  ]}
+/>

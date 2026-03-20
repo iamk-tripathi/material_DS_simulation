@@ -1,0 +1,109 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as SliderStories from './DSSlider.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={SliderStories} />
+
+# Slider
+
+Slider adjusts a value across a constrained range through direct manipulation. It supports single-value, centered, and range-based input without switching component families.
+
+## Variants
+
+<DocSection title="Standard" description="Use for a single value on a straightforward range.">
+  <ComponentPreview caption="Standard Slider" note="Default standard sliders work well for volume, progress, and threshold-like settings.">
+    <Story of={SliderStories.Standard} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Centered" description="Use for bipolar values that change meaning around a midpoint.">
+  <ComponentPreview caption="Centered Slider" note="Centered sliders are useful for balance, offset, or neutral-centered adjustments.">
+    <Story of={SliderStories.Centered} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Range" description="Use when users must define both a minimum and maximum value.">
+  <ComponentPreview caption="Range Slider" note="Range is clearer than placing two standard sliders side by side for the same dimension.">
+    <Story of={SliderStories.Range} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Vertical" description="Use when layout or metaphor favors vertical adjustment.">
+  <ComponentPreview caption="Vertical Slider" note="Vertical sliders need enough surrounding space for a comfortable drag area.">
+    <Story of={SliderStories.Vertical} />
+  </ComponentPreview>
+</DocSection>
+
+## States
+
+<DocSection title="Hovered" description="Use to preview hover treatment on the active control.">
+  <ComponentPreview caption="Hovered Slider" note="Hover should reinforce affordance without overpowering the track.">
+    <Story of={SliderStories.Hovered} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Pressed" description="Use to preview active drag or press feedback.">
+  <ComponentPreview caption="Pressed Slider" note="Pressed state darkens the active track to reinforce direct manipulation.">
+    <Story of={SliderStories.Pressed} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Disabled" description="Use when the value cannot currently be changed.">
+  <ComponentPreview caption="Disabled Slider" note="Provide nearby context if a disabled slider may become available later.">
+    <Story of={SliderStories.Disabled} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use standard sliders for single continuous values',
+    'Use centered sliders when the midpoint matters semantically',
+    'Use range sliders for lower and upper bounds',
+    'Choose slider size based on emphasis and touch comfort',
+    'Provide labels or context so the value meaning is clear',
+  ]}
+  donts={[
+    'Use a slider when only a few discrete choices exist',
+    'Use two separate standard sliders instead of a true range slider',
+    'Rely on color alone to explain the current value',
+    'Make the drag area too small for the intended device',
+    'Disable a slider without explaining why the value is unavailable',
+  ]}
+/>
+
+## Props
+
+<Controls of={SliderStories.Standard} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    { name: 'palette.primary.main', value: '#6750A4', role: 'Active track color', preview: '#6750A4' },
+    { name: 'palette.primary.dark', value: 'Theme dark primary token', role: 'Pressed active track' },
+    { name: 'spacing(40)', value: '160px', role: 'Slider length' },
+    { name: 'spacing(3)–spacing(7)', value: '12px–28px', role: 'Thumb size scale' },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Value Context">
+  Pair sliders with labels, helper text, or nearby values so the meaning of the current position stays clear.
+</DocSection>
+
+<DocSection title="Assistive Technology">
+  Keyboard increments, value announcements, and aria-valuetext behavior are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Switch', href: '/?path=/docs/ds-switch--docs', description: 'Use switch for binary immediate settings rather than continuous adjustment' },
+    { label: 'TextField', href: '/?path=/docs/ds-text-field--docs', description: 'Text fields can complement sliders with explicit numeric entry' },
+    { label: 'Progress Indicator', href: '/?path=/docs/ds-progress-indicator--docs', description: 'Progress indicators show status rather than collect input' },
+  ]}
+/>

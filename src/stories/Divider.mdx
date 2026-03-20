@@ -1,0 +1,95 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as DividerStories from './DSDivider.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={DividerStories} />
+
+# Divider
+
+Divider separates related content into readable sections without becoming a focal element. It works best as quiet structure inside lists, forms, sheets, and stacked layouts.
+
+## Variants
+
+<DocSection title="Full Width" description="Use when the separator should span the full available content width.">
+  <ComponentPreview caption="Full Width Divider" note="Use for clear boundaries between sections of equal hierarchy.">
+    <Story of={DividerStories.Horizontal} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Inset" description="Use when the divider should align with content rather than the full container edge.">
+  <ComponentPreview caption="Inset Divider" note="Inset dividers work well with leading icons or avatars in lists.">
+    <Story of={DividerStories.Inset} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Middle Inset" description="Use when the divider should breathe on both sides.">
+  <ComponentPreview caption="Middle Inset Divider" note="This variation reads as lighter than a full-width separator.">
+    <Story of={DividerStories.MiddleInset} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="With Subhead" description="Use when a divider also introduces the next content group.">
+  <ComponentPreview caption="Divider With Subhead" note="Keep the subhead short and structural.">
+    <Story of={DividerStories.WithSubhead} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Vertical" description="Use to separate adjacent content regions side by side.">
+  <ComponentPreview caption="Vertical Divider" note="Vertical dividers should support layout grouping, not decoration.">
+    <Story of={DividerStories.Vertical} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use dividers to support content grouping',
+    'Choose inset styles when rows contain leading elements',
+    'Use labeled dividers only for true section breaks',
+    'Keep divider treatment subtle',
+    'Prefer spacing first, then divider when separation still needs help',
+  ]}
+  donts={[
+    'Use dividers as decoration',
+    'Over-separate every row in a dense layout',
+    'Add long descriptive copy as a divider label',
+    'Use vertical dividers where spacing alone is enough',
+    'Rely on divider color as the only hierarchy cue',
+  ]}
+/>
+
+## Props
+
+<Controls of={DividerStories.Horizontal} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    { name: 'spacing(4)', value: '16px', role: 'Inset start offset' },
+    { name: 'spacing(2)', value: '8px', role: 'Middle inset and subhead gap' },
+    { name: 'typography.body2', value: 'Theme body2', role: 'Subhead label text' },
+    { name: 'divider default', value: 'Material divider token', role: 'Separator line color' },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Semantic Use">
+  Use divider to support structure, not to communicate essential meaning on its own.
+</DocSection>
+
+<DocSection title="Assistive Technology">
+  Decorative vs semantic separator behavior and aria treatment are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'List', href: '/?path=/docs/ds-list--docs', description: 'Lists commonly use inset and middle-inset dividers' },
+    { label: 'Sheet', href: '/?path=/docs/ds-sheet--docs', description: 'Sheets often separate header, body, and action areas' },
+    { label: 'Dialog', href: '/?path=/docs/ds-dialog--docs', description: 'Scrollable dialogs can use divider-based structure' },
+  ]}
+/>

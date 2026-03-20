@@ -1,0 +1,121 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as NavigationStories from './DSNavigation.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={NavigationStories} />
+
+# Navigation
+
+Navigation presents top-level destination sets across bar, rail, drawer, and XR layouts. It solves the need to move between primary application sections while preserving a consistent destination model.
+
+## Variants
+
+<DocSection title="Bar" description="Use for compact bottom-style navigation with a small set of primary destinations.">
+  <ComponentPreview caption="Navigation Bar" note="This is the default compact bar variant.">
+    <Story of={NavigationStories.Bar} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Rail" description="Use when navigation needs a vertical layout at the side of the interface.">
+  <ComponentPreview caption="Navigation Rail" note="Rail keeps the destination set visible in a compact side layout.">
+    <Story of={NavigationStories.Rail} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Rail Expanded" description="Use when the rail needs more room and a middle-aligned layout.">
+  <ComponentPreview caption="Expanded Rail" note="Expanded rail preserves the destination model while giving the side layout more room.">
+    <Story of={NavigationStories.RailExpanded} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Drawer" description="Use when navigation should remain visible as a persistent drawer.">
+  <ComponentPreview caption="Navigation Drawer" note="Drawer layout supports a wider side surface for primary destinations.">
+    <Story of={NavigationStories.Drawer} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="XR Bar" description="Use when the bar destination pattern is applied in the XR variant.">
+  <ComponentPreview caption="XR Navigation Bar" note="XR bar reuses the same destination model in the XR configuration.">
+    <Story of={NavigationStories.XRBar} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use navigation only for top-level destinations',
+    'Keep the destination set concise and stable',
+    'Match the navigation variant to the layout context',
+    'Preserve the active destination state clearly',
+    'Use alignment intentionally on rail variants',
+  ]}
+  donts={[
+    'Use navigation for secondary or temporary actions',
+    'Overcrowd the destination set without hierarchy',
+    'Mix bar, rail, and drawer patterns without a layout reason',
+    'Hide the active destination state',
+    'Use navigation labels that are vague or inconsistent',
+  ]}
+/>
+
+## Props
+
+<Controls of={NavigationStories.Bar} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    {
+      name: 'palette.background.paper',
+      value: '#FFFBFE',
+      role: 'Navigation surface background',
+      preview: '#FFFBFE',
+    },
+    {
+      name: 'spacing(4)',
+      value: '16px',
+      role: 'Drawer top padding',
+    },
+    {
+      name: 'spacing(64)',
+      value: '256px',
+      role: 'Drawer width',
+    },
+    {
+      name: 'spacing(60)',
+      value: '240px',
+      role: 'Navigation bar drawer width in the shared navigation bar implementation',
+    },
+    {
+      name: 'spacing(2)',
+      value: '8px',
+      role: 'Rail item gap',
+    },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Contrast">
+  Navigation uses the paper background token, but detailed contrast guidance beyond that is not visible in the provided material. Please confirm.
+</DocSection>
+
+<DocSection title="Interaction States">
+  Enabled, hovered, focused, and pressed item states are documented in the source material.
+</DocSection>
+
+<DocSection title="Screen Reader">
+  Screen reader label and aria details are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Navigation Bar', href: '/?path=/docs/ds-navigation-bar--docs', description: 'Navigation bar is the compact shared destination primitive used by navigation' },
+    { label: 'App Bar', href: '/?path=/docs/ds-app-bar--docs', description: 'App bars and navigation often frame the same screen hierarchy' },
+    { label: 'Badge', href: '/?path=/docs/ds-badge--docs', description: 'Badges can attach to navigation destinations for status and counts' },
+  ]}
+/>

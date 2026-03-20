@@ -1,0 +1,105 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as ToolbarStories from './DSToolbar.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={ToolbarStories} />
+
+# Toolbar
+
+Toolbar groups related tools and quick actions inside a compact horizontal, vertical, or XR surface. It works best when a small set of high-frequency controls should stay together as one utility cluster.
+
+## Variants
+
+<DocSection title="Standard Docked" description="Use when the toolbar should feel integrated with the surrounding surface.">
+  <ComponentPreview caption="Standard Docked Toolbar" note="Docked configuration removes elevation and keeps the toolbar visually anchored.">
+    <Story of={ToolbarStories.StandardDocked} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Vibrant Floating" description="Use when the toolbar needs stronger visual emphasis and elevation.">
+  <ComponentPreview caption="Vibrant Floating Toolbar" note="Floating plus vibrant treatment is best reserved for tool groups that must stand apart from nearby content.">
+    <Story of={ToolbarStories.VibrantFloating} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Vertical" description="Use when actions need to stack in a narrow or side-mounted layout.">
+  <ComponentPreview caption="Vertical Toolbar" note="Vertical layout preserves the same compact tool cluster while changing the axis.">
+    <Story of={ToolbarStories.Vertical} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="XR High" description="Use when the toolbar needs a stronger XR-specific surface tier.">
+  <ComponentPreview caption="XR Toolbar" note="XR styling should be used intentionally to match the surrounding environment and hierarchy.">
+    <Story of={ToolbarStories.XRHigh} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Toggleable" description="Use when one or more toolbar actions need to remain selected.">
+  <ComponentPreview caption="Toggleable Toolbar" note="Persistent selection should represent a meaningful active tool or mode.">
+    <Story of={ToolbarStories.Toggleable} />
+  </ComponentPreview>
+</DocSection>
+
+## States
+
+<DocSection title="Disabled" description="Use when toolbar actions are temporarily unavailable.">
+  <ComponentPreview caption="Disabled Toolbar" note="Disabled treatment lowers emphasis across the group while keeping the layout recognizable.">
+    <Story of={ToolbarStories.Disabled} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Group only closely related tools together',
+    'Use floating configuration only when elevation adds useful separation',
+    'Match standard, vibrant, and XR treatments to the surrounding surface hierarchy',
+    'Use toggleable actions only when an active mode needs to persist',
+    'Keep toolbar actions short, recognizable, and high-frequency',
+  ]}
+  donts={[
+    'Mix unrelated tools into one toolbar',
+    'Use strong vibrant or XR treatment without hierarchy reasons',
+    'Add low-priority content that competes with the core tools',
+    'Hide unavailable state when controls are disabled',
+    'Treat toolbar like a dumping ground for overflow actions',
+  ]}
+/>
+
+## Props
+
+<Controls of={ToolbarStories.StandardDocked} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    { name: 'palette.background.paper', value: '#FFFBFE', role: 'Standard toolbar surface', preview: '#FFFBFE' },
+    { name: 'palette.secondary.main', value: '#625B71', role: 'Vibrant and tertiary toolbar background', preview: '#625B71' },
+    { name: 'palette.secondary.contrastText', value: '#FFFFFF', role: 'Vibrant and tertiary toolbar content', preview: '#FFFFFF' },
+    { name: 'spacing(3)', value: '12px', role: 'Toolbar padding' },
+    { name: 'spacing(2)', value: '8px', role: 'Gap between toolbar actions' },
+    { name: 'shadows[1]', value: 'This information is not visible in the provided material. Please confirm.', role: 'Floating toolbar elevation' },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="State Clarity">
+  Toolbar actions should remain individually understandable through icon choice, grouping, and selected state rather than color alone.
+</DocSection>
+
+<DocSection title="Assistive Technology">
+  Screen reader labeling, focus order, and XR-specific accessibility behavior are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Button', href: '/?path=/docs/ds-button--docs', description: 'Toolbars often include button-based actions' },
+    { label: 'App Bar', href: '/?path=/docs/ds-app-bar--docs', description: 'App bars frame the screen while toolbars cluster task actions' },
+    { label: 'Search', href: '/?path=/docs/ds-search--docs', description: 'Search actions frequently appear as part of toolbar clusters' },
+  ]}
+/>

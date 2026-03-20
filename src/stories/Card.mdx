@@ -1,0 +1,189 @@
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
+import * as CardStories from './DSCard.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+import { Box, DSButton, DSCard, ThemeProvider, Typography } from '../components';
+import { theme } from '../theme/theme';
+
+<Meta of={CardStories} />
+
+# Card
+
+Card groups related content and actions inside a single bounded surface. It solves the need to organize related information into a readable, self-contained container.
+
+## Variants
+
+<DocSection title="Elevated" description="Use when content needs clear separation from the surrounding page.">
+  <ComponentPreview caption="Elevated Card" note="Use for default card presentation when elevation helps distinguish grouped content.">
+    <ThemeProvider theme={theme}>
+      <DSCard variant="elevated">
+        <Box
+          sx={(currentTheme) => ({
+            display: 'flex',
+            flexDirection: 'column',
+            gap: currentTheme.spacing(2),
+          })}
+        >
+          <Typography variant="h6">Quarterly Sales</Typography>
+          <Typography variant="body2" sx={(currentTheme) => ({ color: currentTheme.palette.text.secondary })}>
+            Track revenue growth across channels and regions with the latest updates.
+          </Typography>
+          <DSButton variant="text">View Details</DSButton>
+        </Box>
+      </DSCard>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Outlined" description="Use when content needs structure without elevation.">
+  <ComponentPreview caption="Outlined Card" note="Use on flatter layouts where a border is enough to separate content.">
+    <ThemeProvider theme={theme}>
+      <DSCard variant="outlined">
+        <Box
+          sx={(currentTheme) => ({
+            display: 'flex',
+            flexDirection: 'column',
+            gap: currentTheme.spacing(2),
+          })}
+        >
+          <Typography variant="h6">Quarterly Sales</Typography>
+          <Typography variant="body2" sx={(currentTheme) => ({ color: currentTheme.palette.text.secondary })}>
+            Track revenue growth across channels and regions with the latest updates.
+          </Typography>
+          <DSButton variant="text">View Details</DSButton>
+        </Box>
+      </DSCard>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Filled" description="Use when the card itself should read as a stronger surface.">
+  <ComponentPreview caption="Filled Card" note="Use when the container needs more emphasis than an outlined card.">
+    <ThemeProvider theme={theme}>
+      <DSCard variant="filled">
+        <Box
+          sx={(currentTheme) => ({
+            display: 'flex',
+            flexDirection: 'column',
+            gap: currentTheme.spacing(2),
+          })}
+        >
+          <Typography variant="h6">Quarterly Sales</Typography>
+          <Typography variant="body2" sx={(currentTheme) => ({ color: currentTheme.palette.text.secondary })}>
+            Track revenue growth across channels and regions with the latest updates.
+          </Typography>
+          <DSButton variant="text">View Details</DSButton>
+        </Box>
+      </DSCard>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+## States
+
+<DocSection title="Focused" description="Use when the card itself is interactive and has keyboard focus.">
+  <ComponentPreview caption="Focused Card" note="Focused cards need a visible outline so the interaction target remains clear.">
+    <ThemeProvider theme={theme}>
+      <DSCard variant="outlined" state="focused">
+        <Typography variant="body2">Focusable card content</Typography>
+      </DSCard>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Pressed" description="Use when the card is being actively pressed as an interactive surface.">
+  <ComponentPreview caption="Pressed Card" note="Pressed state slightly compresses the card to reinforce interaction feedback.">
+    <ThemeProvider theme={theme}>
+      <DSCard variant="elevated" state="pressed">
+        <Typography variant="body2">Pressed card content</Typography>
+      </DSCard>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use cards to group related content and actions',
+    'Keep content hierarchy clear inside the card',
+    'Use one card style consistently within the same section',
+    'Use focus styling when the card is interactive',
+    'Keep actions inside the card aligned with the content hierarchy',
+  ]}
+  donts={[
+    'Nest cards inside other cards',
+    'Mix multiple card emphasis levels without hierarchy',
+    'Use card containers for unrelated content',
+    'Hide interactive feedback on clickable cards',
+    'Overload a single card with too many actions',
+  ]}
+/>
+
+## Props
+
+<Controls of={CardStories.Elevated} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    {
+      name: 'palette.background.paper',
+      value: '#FFFBFE',
+      role: 'Default card surface',
+      preview: '#FFFBFE',
+    },
+    {
+      name: 'palette.primary.main',
+      value: '#6750A4',
+      role: 'Focused state outline',
+      preview: '#6750A4',
+    },
+    {
+      name: 'shape.borderRadius',
+      value: '12px',
+      role: 'Card corner radius',
+    },
+    {
+      name: 'spacing(4)',
+      value: '16px',
+      role: 'Card content padding',
+    },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Keyboard Navigation">
+  Interactive cards should expose a visible focus treatment and remain reachable through keyboard navigation.
+</DocSection>
+
+<DocSection title="Screen Reader">
+  Card content should preserve a clear reading order and actionable elements should have descriptive labels.
+</DocSection>
+
+<DocSection title="Contrast">
+  Card text should maintain clear contrast against the card surface and any focused outline should remain visually distinct.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    {
+      label: 'Button',
+      href: '/?path=/docs/ds-button--docs',
+      description: 'Cards often include one or more button actions',
+    },
+    {
+      label: 'List',
+      href: '/?path=/docs/ds-list--docs',
+      description: 'Cards and lists both organize related information into readable groups',
+    },
+    {
+      label: 'Dialog',
+      href: '/?path=/docs/ds-dialog--docs',
+      description: 'Dialogs can present card-like grouped content and actions',
+    },
+  ]}
+/>

@@ -3,29 +3,44 @@
 Search
 
 ### Overview
-- This information is not visible in the provided material. Please confirm.
-- This information is not visible in the provided material. Please confirm.
+- Search combines query entry with contextual surface treatments and optional identity cues.
+- It solves the need to enter search terms in bar, docked, and full-screen search presentations.
 
 ### Usage
-- This information is not visible in the provided material. Please confirm.
-- This information is not visible in the provided material. Please confirm.
-- This information is not visible in the provided material. Please confirm.
+- Used in top-level search entry, docked search modules, and immersive search screens.
+- Typical scenarios include a compact search bar, docked search with supporting text, full-screen search, and avatar-led search entry.
+- Context of use: query entry and discovery.
 
 ### Structure
-- Variants: `Search bar | Search docked layout | Search full-screen layout`
-- Search bar: `State = Enabled | Hovered | Pressed`
-- Search bar: `Show avatar = True | False`
-- Layout configuration: `Input text | Supporting text`
+- Variants: `bar`, `docked`, `full-screen`
+- States: `enabled`, `hovered`, `pressed`
+- Configurations: `input-text`, `supporting-text`
+- Optional leading avatar support
+- Search icon or avatar leads the input field.
+- Supporting text appears below the field when enabled.
 
 ### Properties
-- Tokens used: This information is not visible in the provided material. Please confirm.
-- Configurable properties: `variant`, `state`, `showAvatar`, `configuration`, `value`
+- Tokens used:
+- `palette.background.paper` (`#FFFBFE`) for docked search surfaces
+- `palette.action.hover` for hovered input background
+- `palette.action.selected` for pressed input background
+- `spacing(60)` (`240px`) for bar and docked width
+- `spacing(80)` (`320px`) for full-screen width
+- `spacing(4)` (`16px`) for container padding
+- `spacing(2)` (`8px`) for gaps between leading element and text field
+- Outlined text-field styling for query entry
+- Configurable properties:
+- `variant?: 'bar' | 'docked' | 'full-screen'`
+- `state?: 'enabled' | 'hovered' | 'pressed'`
+- `showAvatar?: boolean`
+- `configuration?: 'input-text' | 'supporting-text'`
+- `value?: string`
 
 ### Accessibility Considerations
-- Contrast: This information is not visible in the provided material. Please confirm.
-- Interaction states: `Enabled | Hovered | Pressed`
-- Screen reader label/aria attributes: This information is not visible in the provided material. Please confirm.
+- Placeholder text alone should not be the only accessible label.
+- Field labeling, search landmark usage, and screen reader behavior: This information is not visible in the provided material. Please confirm.
+- Keyboard shortcuts and submit behavior: This information is not visible in the provided material. Please confirm.
 
 ### Guidelines
-- This information is not visible in the provided material. Please confirm.
-- This information is not visible in the provided material. Please confirm.
+- Use docked search when the control belongs to a persistent surface section.
+- Use full-screen search when discovery is the primary task and more context is needed.

@@ -1,0 +1,102 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as DialogStories from './DSDialog.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={DialogStories} />
+
+# Dialog
+
+Dialog interrupts the current flow with focused information or a small set of decisions. It is best for short, high-priority moments that need confirmation, selection, or acknowledgment without navigating away.
+
+## Variants
+
+<DocSection title="Basic" description="Use for short confirmation or informational content.">
+  <ComponentPreview caption="Basic Dialog" note="Keep the title, message, and action set concise.">
+    <Story of={DialogStories.Basic} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="List" description="Use when the dialog content is primarily a set of options.">
+  <ComponentPreview caption="List Dialog" note="List variants work best when users must choose from a short menu of actions.">
+    <Story of={DialogStories.ListDialog} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Scrollable List" description="Use when list content exceeds the comfortable visible area.">
+  <ComponentPreview caption="Scrollable List Dialog" note="Use dividers and short item labels to keep long lists scannable.">
+    <Story of={DialogStories.ScrollableList} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="XR" description="Use for a higher-emphasis message surface with stronger visual treatment.">
+  <ComponentPreview caption="XR Dialog" note="Reserve XR styling for moments that need extra prominence.">
+    <Story of={DialogStories.XR} />
+  </ComponentPreview>
+</DocSection>
+
+## States
+
+<DocSection title="Open State" description="The current implementation documents the visible open state only.">
+  <ComponentPreview caption="Open Dialog" note="Keep open dialogs focused on one decision or task at a time.">
+    <Story of={DialogStories.Basic} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Keep the title and supporting copy short',
+    'Use one clear primary action and one secondary action',
+    'Use list dialogs for compact option sets',
+    'Escalate to XR styling only when emphasis is truly needed',
+    'Make cancel and confirm outcomes easy to understand',
+  ]}
+  donts={[
+    'Stack multiple dialogs on top of each other',
+    'Put long-form workflows inside a dialog',
+    'Use a dialog when inline content would work better',
+    'Overload the footer with many actions',
+    'Use XR emphasis for routine low-priority confirmations',
+  ]}
+/>
+
+## Props
+
+<Controls of={DialogStories.Basic} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    { name: 'palette.background.paper', value: '#FFFBFE', role: 'Standard dialog surface', preview: '#FFFBFE' },
+    { name: 'palette.secondary.main', value: '#625B71', role: 'XR highest-emphasis surface', preview: '#625B71' },
+    { name: 'palette.secondary.contrastText', value: '#FFFFFF', role: 'XR highest-emphasis content', preview: '#FFFFFF' },
+    { name: 'palette.text.primary', value: '#1C1B1F', role: 'Title and body text', preview: '#1C1B1F' },
+    { name: 'spacing(2)', value: '8px', role: 'Title row gap' },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Focus Management">
+  Focus trap, initial focus, and restore-focus behavior are not visible in the provided material. Please confirm.
+</DocSection>
+
+<DocSection title="Screen Reader">
+  Dialog labeling, described-by relationships, and action announcement details are not visible in the provided material. Please confirm.
+</DocSection>
+
+<DocSection title="Content Strategy">
+  Use dialog only when the interruption is justified. Keep content concise and make the primary action outcome explicit.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Button', href: '/?path=/docs/ds-button--docs', description: 'Dialogs rely on clear primary and secondary actions' },
+    { label: 'Menu', href: '/?path=/docs/ds-menu--docs', description: 'Use a menu when the user is choosing a transient option set' },
+    { label: 'Sheet', href: '/?path=/docs/ds-sheet--docs', description: 'Use a sheet when the content should feel less interruptive' },
+  ]}
+/>

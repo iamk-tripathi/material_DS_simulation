@@ -1,0 +1,126 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as MenuStories from './DSMenu.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={MenuStories} />
+
+# Menu
+
+Menu presents a transient list of contextual actions using baseline, standard, and vibrant treatments. It solves the need to show grouped action choices in a compact overlay surface.
+
+## Variants
+
+<DocSection title="Baseline" description="Use for the baseline menu treatment.">
+  <ComponentPreview caption="Baseline Menu" note="Baseline menu shows the same grouped action pattern with the baseline visual treatment.">
+    <Story of={MenuStories.Baseline} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Standard" description="Use for the default contextual menu presentation.">
+  <ComponentPreview caption="Standard Menu" note="Standard menu uses the paper surface and text primary content color.">
+    <Story of={MenuStories.Standard} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Vibrant" description="Use when the menu needs stronger color emphasis.">
+  <ComponentPreview caption="Vibrant Menu" note="Vibrant menu switches to the secondary surface and can show multiple menu groups.">
+    <Story of={MenuStories.Vibrant} />
+  </ComponentPreview>
+</DocSection>
+
+## States
+
+<DocSection title="Active" description="Use when a menu item is active or selected.">
+  <ComponentPreview caption="Active Menu Item" note="Active state highlights the current contextual choice.">
+    <Story of={MenuStories.Active} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Disabled" description="Use when a menu action is temporarily unavailable.">
+  <ComponentPreview caption="Disabled Menu Item" note="Disabled state lowers opacity while keeping the menu structure visible.">
+    <Story of={MenuStories.Disabled} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use menus for contextual action lists',
+    'Keep item labels concise and scannable',
+    'Group menu items only when grouping improves clarity',
+    'Use vibrant menus intentionally when stronger emphasis is needed',
+    'Preserve active and disabled feedback where relevant',
+  ]}
+  donts={[
+    'Use menus for long-form navigation',
+    'Overgroup menu items without a clear reason',
+    'Hide disabled or active state feedback',
+    'Use vibrant menus everywhere by default',
+    'Overload a single menu with unrelated actions',
+  ]}
+/>
+
+## Props
+
+<Controls of={MenuStories.Baseline} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    {
+      name: 'palette.background.paper',
+      value: '#FFFBFE',
+      role: 'Standard menu surface',
+      preview: '#FFFBFE',
+    },
+    {
+      name: 'palette.secondary.main',
+      value: '#625B71',
+      role: 'Vibrant menu background',
+      preview: '#625B71',
+    },
+    {
+      name: 'palette.secondary.contrastText',
+      value: '#FFFFFF',
+      role: 'Vibrant menu content',
+      preview: '#FFFFFF',
+    },
+    {
+      name: 'palette.text.primary',
+      value: '#1C1B1F',
+      role: 'Standard menu content',
+      preview: '#1C1B1F',
+    },
+    {
+      name: 'spacing(56)',
+      value: '224px',
+      role: 'Menu width',
+    },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Contrast">
+  Standard and vibrant menus switch between paper and secondary surfaces, but detailed contrast guidance beyond that is not visible in the provided material. Please confirm.
+</DocSection>
+
+<DocSection title="Interaction States">
+  Enabled, hovered, focused, pressed, disabled, and active states are documented in the source material.
+</DocSection>
+
+<DocSection title="Screen Reader">
+  Screen reader label and aria details are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Dialog', href: '/?path=/docs/ds-dialog--docs', description: 'Dialogs often launch or contain contextual menu actions' },
+    { label: 'List', href: '/?path=/docs/ds-list--docs', description: 'Menus and lists both present grouped action rows' },
+    { label: 'Button', href: '/?path=/docs/ds-button--docs', description: 'Buttons commonly trigger menus' },
+  ]}
+/>

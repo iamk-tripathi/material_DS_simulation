@@ -1,0 +1,98 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as AppBarStories from './DSAppBar.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+import { Box, DSAppBar, ThemeProvider } from '../components';
+import { theme } from '../theme/theme';
+
+<Meta of={AppBarStories} />
+
+# App Bar
+
+App Bar anchors screen title, navigation affordances, and top-level actions within a consistent surface. It helps users understand where they are, how to go back, and what high-priority actions are available.
+
+## Variants
+
+<DocSection title="Small" description="Use as the default top app bar for most screens.">
+  <ComponentPreview caption="Small App Bar" note="Small is the default choice when title and actions fit in a compact header.">
+    <Story of={AppBarStories.Small} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="With Back Arrow" description="Use when the screen sits below a previous navigation level.">
+  <ComponentPreview caption="App Bar With Back Arrow" note="Back affordance should only appear when there is a meaningful navigation step to return to.">
+    <Story of={AppBarStories.WithBackArrow} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="With Avatar" description="Use when identity or account access should remain visible in the header.">
+  <ComponentPreview caption="App Bar With Avatar" note="Avatar works best as a secondary action, not a replacement for the title.">
+    <Story of={AppBarStories.WithAvatar} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Bottom App Bar" description="Use when bottom-edge actions need to remain persistent.">
+  <ComponentPreview caption="Bottom App Bar" note="Use bottom app bar when actions belong to the screen shell rather than the content body.">
+    <ThemeProvider theme={theme}>
+      <Box sx={(currentTheme) => ({ backgroundColor: currentTheme.palette.background.default })}>
+        <DSAppBar size="small" barType="bottom" title="Actions" iconsCount="3" />
+      </Box>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use app bar to frame the screen title and top-level actions',
+    'Show a back arrow only when there is a real previous step',
+    'Keep trailing actions secondary to the title',
+    'Use bottom app bar only when persistent shell actions are needed',
+    'Match app bar size to the screen hierarchy and content density',
+  ]}
+  donts={[
+    'Overload the app bar with too many competing actions',
+    'Replace a clear title with only icons or avatar',
+    'Show back navigation when the screen is already top-level',
+    'Use bottom app bar for content-specific actions that belong inside the body',
+    'Rely on color alone to communicate hierarchy or affordance',
+  ]}
+/>
+
+## Props
+
+<Controls of={AppBarStories.Small} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    { name: 'palette.background.paper', value: '#FFFBFE', role: 'App bar surface', preview: '#FFFBFE' },
+    { name: 'palette.text.primary', value: '#1C1B1F', role: 'Title and action content', preview: '#1C1B1F' },
+    { name: 'spacing(16)', value: '64px', role: 'Small app bar height' },
+    { name: 'spacing(28)', value: '112px', role: 'Medium app bar height' },
+    { name: 'spacing(38)', value: '152px', role: 'Large app bar height' },
+    { name: 'spacing(4)', value: '16px', role: 'Horizontal padding' },
+    { name: 'spacing(2)', value: '8px', role: 'Action gap' },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Title Hierarchy">
+  The app bar should keep the current screen title prominent so users can orient themselves quickly.
+</DocSection>
+
+<DocSection title="Assistive Technology">
+  Focus behavior, button labeling, and aria details are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Navigation Bar', href: '/?path=/docs/ds-navigation-bar--docs', description: 'Use navigation bar for destination switching rather than title framing' },
+    { label: 'Avatar', href: '/?path=/docs/ds-avatar--docs', description: 'Avatar can appear as a trailing identity action in the app bar' },
+    { label: 'Toolbar', href: '/?path=/docs/ds-toolbar--docs', description: 'Toolbars group utilities while app bars frame the screen shell' },
+  ]}
+/>

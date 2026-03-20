@@ -3,30 +3,47 @@
 Navigation
 
 ### Overview
-- This information is not visible in the provided material. Please confirm.
-- This information is not visible in the provided material. Please confirm.
+- Navigation presents top-level destination sets across bar, rail, drawer, and XR layouts.
+- It solves the need to move between primary application sections while preserving a consistent destination model.
 
 ### Usage
-- This information is not visible in the provided material. Please confirm.
-- This information is not visible in the provided material. Please confirm.
-- This information is not visible in the provided material. Please confirm.
+- Used for primary app-level destination changes in compact bars, side rails, expanded rails, drawers, and XR layouts.
+- Typical scenarios include mobile bottom navigation, desktop side rails, expanded side navigation, and permanent drawers.
+- Context of use: top-level destination selection.
 
 ### Structure
-- Variants: `Navigation drawer | Navigation rail | Navigation rail expanded | Navigation bar | XR navigation rail | XR navigation bar`
-- Alignment: `Top | Middle`
-- Nav items: `3 | 4 | 5 | 6`
-- Item states: `Enabled | Hovered | Focused | Pressed`
-- Item badge: `None | Small | Large`
+- Variants: `drawer`, `rail`, `rail-expanded`, `bar`, `xr-rail`, `xr-bar`
+- Alignment: `top`, `middle`
+- Nav items: `3`, `4`, `5`, `6`
+- Item states documented in source material: `enabled`, `hovered`, `focused`, `pressed`
+- Item badge documented in source material: `none`, `small`, `large`
+- `bar` and `xr-bar` use the shared navigation bar implementation
+- `rail`, `xr-rail`, and `rail-expanded` use the shared navigation rail implementation
+- `drawer` uses a wider list-based drawer surface
 
 ### Properties
-- Tokens used: This information is not visible in the provided material. Please confirm.
-- Configurable properties: `variant`, `items`, `activeIndex`, `alignment`, `navItems`, `orientation`, `railType`, `configuration`
+- Tokens used:
+- `palette.background.paper` (`#FFFBFE`) for navigation surfaces
+- `spacing(4)` (`16px`) for drawer top padding
+- `spacing(64)` (`256px`) for drawer width in `DSNavigation`
+- `spacing(60)` (`240px`) for drawer width in the shared `DSNavigationBar` drawer implementation
+- `spacing(2)` (`8px`) for rail item gap
+- Configurable properties:
+- `variant`
+- `items`
+- `activeIndex`
+- `onChange`
+- `alignment`
+- `navItems`
+- `orientation`
+- `railType`
+- `configuration`
 
 ### Accessibility Considerations
-- Contrast: This information is not visible in the provided material. Please confirm.
-- Interaction states: `Enabled | Hovered | Focused | Pressed`
+- Contrast: navigation uses the paper background token. This information is not visible in the provided material. Please confirm.
+- Interaction states: `enabled`, `hovered`, `focused`, `pressed`
 - Screen reader label/aria attributes: This information is not visible in the provided material. Please confirm.
 
 ### Guidelines
-- This information is not visible in the provided material. Please confirm.
-- This information is not visible in the provided material. Please confirm.
+- Use navigation only for top-level destinations.
+- Keep the destination set concise and stable.

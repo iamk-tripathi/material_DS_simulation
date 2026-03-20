@@ -35,4 +35,4 @@ Badge
 
 ### Guidelines
 - Use when a navigation destination needs to show a notification, item count, or related status.
-- This information is not visible in the provided material. Please confirm.
+- Keep badge content short and tied to the destination it annotates.

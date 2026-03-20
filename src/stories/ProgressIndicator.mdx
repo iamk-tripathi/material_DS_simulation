@@ -1,0 +1,104 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as ProgressStories from './DSProgressIndicator.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={ProgressStories} />
+
+# Progress Indicator
+
+Progress Indicator communicates ongoing status, completion, or background loading. It helps users understand whether work is measurable, still in flight, or waiting on an unknown duration.
+
+## Variants
+
+<DocSection title="Linear Determinate" description="Use when completion can be measured as a known percentage.">
+  <ComponentPreview caption="Linear Determinate" note="Best for uploads, downloads, or tasks with a reliable completion value.">
+    <Story of={ProgressStories.LinearDeterminate} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Linear Indeterminate" description="Use when work is happening but completion cannot yet be measured.">
+  <ComponentPreview caption="Linear Indeterminate" note="Use while the system is fetching, preparing, or waiting.">
+    <Story of={ProgressStories.LinearIndeterminate} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Circular Determinate" description="Use when a compact circular progress readout fits the layout better.">
+  <ComponentPreview caption="Circular Determinate" note="Compact circular treatment works well inside cards and small modules.">
+    <Story of={ProgressStories.CircularDeterminate} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Circular Indeterminate" description="Use when ongoing work needs a compact non-linear indicator.">
+  <ComponentPreview caption="Circular Indeterminate" note="Prefer this when space is tight and timing is unknown.">
+    <Story of={ProgressStories.CircularIndeterminate} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Loading" description="Use as a standalone loading affordance with optional surface container.">
+  <ComponentPreview caption="Loading" note="Container mode helps loading feel anchored inside a bounded area.">
+    <Story of={ProgressStories.Loading} />
+  </ComponentPreview>
+</DocSection>
+
+## States
+
+<DocSection title="Wave Style" description="Use when the thicker wave treatment better matches the surrounding emphasis level.">
+  <ComponentPreview caption="Wave Progress" note="Wave styling adds visual weight compared with the default flat treatment.">
+    <Story of={ProgressStories.Wave} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use determinate progress only when the value is actually known',
+    'Use indeterminate indicators for unknown duration tasks',
+    'Choose circular or linear form based on available space',
+    'Anchor loading states inside a container when context matters',
+    'Match thickness and style to the emphasis of the surface',
+  ]}
+  donts={[
+    'Show determinate values that are not trustworthy',
+    'Use multiple competing loading indicators in one region',
+    'Rely on motion alone to explain status',
+    'Use a heavy loading treatment for very minor background tasks',
+    'Leave users without context when loading takes time',
+  ]}
+/>
+
+## Props
+
+<Controls of={ProgressStories.LinearDeterminate} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    { name: 'palette.primary.main', value: '#6750A4', role: 'Active progress color', preview: '#6750A4' },
+    { name: 'palette.background.paper', value: '#FFFBFE', role: 'Optional loading container surface', preview: '#FFFBFE' },
+    { name: 'spacing(40)', value: '160px', role: 'Linear indicator width' },
+    { name: 'spacing(1)', value: '4px', role: 'Thin progress thickness' },
+    { name: 'spacing(2)', value: '8px', role: 'Thick progress thickness' },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Status Communication">
+  Pair progress indicators with nearby status text when duration or meaning may be unclear.
+</DocSection>
+
+<DocSection title="Assistive Technology">
+  Progress announcements, aria-valuenow usage, and reduced-motion behavior are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Dialog', href: '/?path=/docs/ds-dialog--docs', description: 'Dialogs sometimes need inline loading feedback' },
+    { label: 'Sheet', href: '/?path=/docs/ds-sheet--docs', description: 'Sheets can host bounded loading states' },
+    { label: 'Button', href: '/?path=/docs/ds-button--docs', description: 'Buttons often trigger the work that progress indicators represent' },
+  ]}
+/>

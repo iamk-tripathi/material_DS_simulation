@@ -1,0 +1,145 @@
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
+import * as BadgeStories from './DSBadge.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+import { DSBadge, ThemeProvider } from '../components';
+import { theme } from '../theme/theme';
+
+<Meta of={BadgeStories} />
+
+# Badge
+
+Badge is used to indicate a notification, item count, or related status on a navigation destination. It solves the need to show a compact status indicator attached to a navigation destination.
+
+## Variants
+
+<DocSection title="Large" description="Use when the badge needs to show a readable count or short status value.">
+  <ComponentPreview caption="Large Badge" note="Use for compact counts that need to remain visible on a navigation destination.">
+    <ThemeProvider theme={theme}>
+      <DSBadge size="large" label="3" />
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Small" description="Use when a status indicator is needed without any text value.">
+  <ComponentPreview caption="Small Badge" note="Use as a dot indicator when a count is not required.">
+    <ThemeProvider theme={theme}>
+      <DSBadge size="small" />
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+## States
+
+<DocSection title="Overflow" description="Use when the count exceeds the maximum visible value.">
+  <ComponentPreview caption="Overflow Badge" note="Values above the maximum collapse to the max-plus format.">
+    <ThemeProvider theme={theme}>
+      <DSBadge size="large" label="100" max={99} />
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="No Label" description="Use when the large badge container is needed without a visible count.">
+  <ComponentPreview caption="Large Badge Without Label" note="Only use when the large badge shape itself communicates the required status.">
+    <ThemeProvider theme={theme}>
+      <DSBadge size="large" />
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use badge counts for notifications or related status only',
+    'Use the small badge when text is not needed',
+    'Keep large badge labels short and compact',
+    'Use error tokens consistently for the badge surface',
+    'Use max values to prevent unreadable counts',
+  ]}
+  donts={[
+    'Use badges as standalone labels without an attached destination',
+    'Place long text strings inside a large badge',
+    'Use the small badge to show readable counts',
+    'Change badge colors away from the error token set',
+    'Rely on badge color alone for accessibility context',
+  ]}
+/>
+
+## Props
+
+<Controls of={BadgeStories.Large} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    {
+      name: 'palette.error.main',
+      value: '#B3261E',
+      role: 'Badge background',
+      preview: '#B3261E',
+    },
+    {
+      name: 'palette.error.contrastText',
+      value: '#FFFFFF',
+      role: 'Large badge label',
+      preview: '#FFFFFF',
+    },
+    {
+      name: 'spacing(1)',
+      value: '4px',
+      role: 'Large badge horizontal padding',
+    },
+    {
+      name: 'spacing(0.5)',
+      value: '2px',
+      role: 'Large badge vertical padding',
+    },
+    {
+      name: 'spacing(250)',
+      value: '1000px',
+      role: 'Fully round badge shape',
+    },
+    {
+      name: 'label/small',
+      value: 'Roboto Medium 11px / 16 / 0.5',
+      role: 'Large badge text style',
+    },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Contrast">
+  Large badge text uses error contrast text on the error background.
+</DocSection>
+
+<DocSection title="Interaction States">
+  This information is not visible in the provided material. Please confirm.
+</DocSection>
+
+<DocSection title="Screen Reader">
+  This information is not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    {
+      label: 'Navigation Bar',
+      href: '/?path=/docs/ds-navigation-bar--docs',
+      description: 'Badges commonly attach to navigation destinations',
+    },
+    {
+      label: 'Avatar',
+      href: '/?path=/docs/ds-avatar--docs',
+      description: 'Badges can accompany identity elements in compact UI',
+    },
+    {
+      label: 'App Bar',
+      href: '/?path=/docs/ds-app-bar--docs',
+      description: 'Top-level navigation surfaces often pair with status indicators',
+    },
+  ]}
+/>

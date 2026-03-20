@@ -1,0 +1,116 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as DateTimePickerStories from './DSDateTimePicker.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={DateTimePickerStories} />
+
+# Date Time Picker
+
+Date Time Picker collects temporal values through modal, input, docked, dial, and keyboard-driven formats. It solves the need to enter dates and time-related values in a structured flow.
+
+## Variants
+
+<DocSection title="Modal Day" description="Use for a modal picker focused on day selection.">
+  <ComponentPreview caption="Modal Day Picker" note="This is the default modal date picker configuration.">
+    <Story of={DateTimePickerStories.ModalDay} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Input Range" description="Use when a date range needs two input fields.">
+  <ComponentPreview caption="Input Range Picker" note="Range input mode adds a second field for the end date.">
+    <Story of={DateTimePickerStories.InputRange} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Docked Year" description="Use for docked input mode focused on year selection.">
+  <ComponentPreview caption="Docked Year Picker" note="Docked input mode keeps the picker anchored in the layout instead of modal.">
+    <Story of={DateTimePickerStories.DockedYear} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Dial 24" description="Use for dial-style time selection in 24-hour format.">
+  <ComponentPreview caption="Dial Picker" note="Dial mode exposes the time format explicitly in the picker surface.">
+    <Story of={DateTimePickerStories.Dial24} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Keyboard 12" description="Use for keyboard-style entry in 12-hour format.">
+  <ComponentPreview caption="Keyboard Picker" note="Keyboard mode can also switch orientation to horizontal in the current implementation.">
+    <Story of={DateTimePickerStories.Keyboard12} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Choose the picker variant based on the input flow and device context',
+    'Use range mode only when two related temporal values are required',
+    'Match the time format to the product context',
+    'Keep date entry labels clear and unambiguous',
+    'Use docked layouts only when the surrounding UI can support them',
+  ]}
+  donts={[
+    'Mix picker modes without a clear reason',
+    'Use range mode when only a single value is needed',
+    'Hide the time format when the picker depends on it',
+    'Overcrowd the picker surface with unrelated controls',
+    'Rely on layout alone to explain the picker mode',
+  ]}
+/>
+
+## Props
+
+<Controls of={DateTimePickerStories.ModalDay} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    {
+      name: 'spacing(72)',
+      value: '288px',
+      role: 'Picker surface width',
+    },
+    {
+      name: 'spacing(4)',
+      value: '16px',
+      role: 'Picker padding',
+    },
+    {
+      name: 'spacing(3)',
+      value: '12px',
+      role: 'Gap between picker sections',
+    },
+    {
+      name: 'palette.background.paper',
+      value: '#FFFBFE',
+      role: 'Picker surface background',
+      preview: '#FFFBFE',
+    },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Contrast">
+  Detailed contrast guidance is not visible in the provided material. Please confirm.
+</DocSection>
+
+<DocSection title="Interaction States">
+  Enabled, hovered, focused, pressed, and disabled states are documented in the source material.
+</DocSection>
+
+<DocSection title="Screen Reader">
+  Screen reader label and aria details are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Text Field', href: '/?path=/docs/ds-text-field--docs', description: 'Input-based date pickers build on text field behavior' },
+    { label: 'Dialog', href: '/?path=/docs/ds-dialog--docs', description: 'Modal date pickers share interaction patterns with dialogs' },
+    { label: 'Sheet', href: '/?path=/docs/ds-sheet--docs', description: 'Sheet surfaces can host supplementary temporal workflows' },
+  ]}
+/>

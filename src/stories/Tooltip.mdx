@@ -1,0 +1,82 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as TooltipStories from './DSTooltip.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+Tooltip provides concise supplemental guidance near a trigger. It is best for short clarifications that help users understand a control without permanently consuming space in the layout.
+
+## Variants
+
+<DocSection title="Plain" description="Use for short single-line guidance.">
+  <ComponentPreview caption="Plain Tooltip" note="Plain tooltips are best for brief explanatory copy.">
+    <Story of={TooltipStories.Plain} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Multi-Line" description="Use when a single line is not enough to explain the trigger.">
+  <ComponentPreview caption="Multi-Line Tooltip" note="Keep multi-line content concise even when the tooltip can wrap.">
+    <Story of={TooltipStories.MultiLine} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Rich" description="Use when the tooltip needs stronger treatment and arrow support.">
+  <ComponentPreview caption="Rich Tooltip" note="Rich tooltip should still stay supplemental rather than become a mini panel.">
+    <Story of={TooltipStories.Rich} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use tooltips for supplemental guidance only',
+    'Keep tooltip copy short and specific',
+    'Attach the tooltip to a clear trigger',
+    'Use rich tooltip only when the added treatment is justified',
+    'Ensure the trigger still makes sense without the tooltip',
+  ]}
+  donts={[
+    'Put essential instructions only in a tooltip',
+    'Use tooltips for long-form content',
+    'Show tooltips without a clear trigger relationship',
+    'Rely on tooltip alone for accessibility labeling',
+    'Use rich treatment for routine one-word hints',
+  ]}
+/>
+
+## Props
+
+<Controls of={TooltipStories.Plain} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    { name: 'palette.background.paper', value: '#FFFBFE', role: 'Trigger preview surface', preview: '#FFFBFE' },
+    { name: 'spacing(2)', value: '8px', role: 'Trigger padding' },
+    { name: 'typography.body2', value: 'Theme body2', role: 'Tooltip content text' },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Supplemental Use">
+  Tooltip should add context, not carry essential meaning that users need in order to complete the task.
+</DocSection>
+
+<DocSection title="Assistive Technology">
+  Hover and focus timing, dismissal behavior, and aria-describedby wiring are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Button', href: '/?path=/docs/ds-button--docs', description: 'Buttons sometimes use tooltips for secondary clarification' },
+    { label: 'Icon', href: '/?path=/docs/ds-navigation--docs', description: 'Icon-heavy navigation may need concise tooltip support' },
+    { label: 'Menu', href: '/?path=/docs/ds-menu--docs', description: 'Menus can reduce the need for hidden tooltip-only actions' },
+  ]}
+/>

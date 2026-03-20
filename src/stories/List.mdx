@@ -1,0 +1,120 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as ListStories from './DSList.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={ListStories} />
+
+# List
+
+List presents structured rows for scanning, selection, disclosure, and swipe-driven actions. It is the core pattern for repeatable content with flexible leading and trailing anatomy.
+
+## Variants
+
+<DocSection title="Standard" description="Use for default two-line or one-line row patterns.">
+  <ComponentPreview caption="Standard List" note="This is the baseline row structure for most list content.">
+    <Story of={ListStories.Standard} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Baseline" description="Use when the baseline list presentation is the clearest fit for the content.">
+  <ComponentPreview caption="Baseline List" note="Baseline rows keep hierarchy simple and stable.">
+    <Story of={ListStories.Baseline} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Segmented Filled" description="Use when list items sit on a stronger grouped surface.">
+  <ComponentPreview caption="Segmented Filled List" note="Selected state reads more strongly on a segmented surface.">
+    <Story of={ListStories.SegmentedFilled} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Expandable" description="Use when a list row reveals additional content inline.">
+  <ComponentPreview caption="Expandable List" note="Expandable rows work best for progressive disclosure, not deep navigation.">
+    <Story of={ListStories.Expandable} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Swipe Revealed" description="Use when actions are revealed contextually after a swipe gesture.">
+  <ComponentPreview caption="Swipe-Revealed List" note="Swipe actions should be supplemental, not the only way to complete a task.">
+    <Story of={ListStories.SwipeRevealed} />
+  </ComponentPreview>
+</DocSection>
+
+## States
+
+<DocSection title="Dense" description="Use when scan density matters more than roomy row spacing.">
+  <ComponentPreview caption="Dense List" note="Dense layouts still need clear hierarchy and tappable structure.">
+    <Story of={ListStories.Dense} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Top Aligned" description="Use for longer content or three-line patterns.">
+  <ComponentPreview caption="Top-Aligned List" note="Top alignment keeps multi-line content easier to scan.">
+    <Story of={ListStories.TopAligned} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Disabled" description="Use when a list row cannot currently be acted on.">
+  <ComponentPreview caption="Disabled List Item" note="Pair disabled treatment with surrounding context so the limitation is understandable.">
+    <Story of={ListStories.Disabled} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Choose leading and trailing elements based on row meaning',
+    'Use overline and supporting text only when they add hierarchy',
+    'Use expandable rows for progressive disclosure',
+    'Use dense lists intentionally in space-constrained layouts',
+    'Keep swipe actions supplemental and discoverable',
+  ]}
+  donts={[
+    'Mix many row patterns in the same list without reason',
+    'Use list decoration that does not support the row action',
+    'Hide essential actions only behind swipe',
+    'Rely on selected background color alone to convey state',
+    'Use dense rows when readability is the higher priority',
+  ]}
+/>
+
+## Props
+
+<Controls of={ListStories.Standard} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    { name: 'palette.secondary.light', value: '#E8DEF8', role: 'Segmented-filled list surface', preview: '#E8DEF8' },
+    { name: 'palette.action.selected', value: 'Theme selected action token', role: 'Selected row surface' },
+    { name: 'spacing(1)', value: '4px', role: 'Dense vertical row padding' },
+    { name: 'spacing(1.5)', value: '6px', role: 'Medium density row padding' },
+    { name: 'spacing(2)', value: '8px', role: 'Default row padding' },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Selection and State">
+  Use text, layout, and iconography alongside color so selected and disabled meaning stays understandable.
+</DocSection>
+
+<DocSection title="Advanced Interactions">
+  Swipe, drag, keyboard support, and row semantics are not visible in the provided material. Please confirm.
+</DocSection>
+
+<DocSection title="Screen Reader">
+  Screen reader labeling and list-item role details are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Checkbox', href: '/?path=/docs/ds-checkbox--docs', description: 'Lists often include checkbox-driven selection' },
+    { label: 'Radio Button', href: '/?path=/docs/ds-radio-button--docs', description: 'Use radio buttons for exclusive list choices' },
+    { label: 'Divider', href: '/?path=/docs/ds-divider--docs', description: 'Dividers help separate dense or grouped list content' },
+  ]}
+/>

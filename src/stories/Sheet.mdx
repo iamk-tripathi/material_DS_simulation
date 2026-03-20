@@ -1,0 +1,114 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as SheetStories from './DSSheet.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={SheetStories} />
+
+# Sheet
+
+Sheet presents supplementary content anchored to the bottom or side edge of the interface. It solves the need to show supporting content in a dedicated surface without leaving the current flow.
+
+## Variants
+
+<DocSection title="Bottom" description="Use for a standard bottom sheet anchored to the lower edge.">
+  <ComponentPreview caption="Bottom Sheet" note="Bottom sheet uses a persistent drawer behavior in the current implementation.">
+    <Story of={SheetStories.Bottom} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Bottom Modal" description="Use when the bottom sheet should behave modally.">
+  <ComponentPreview caption="Bottom Modal Sheet" note="Modal bottom sheets switch the drawer behavior to temporary.">
+    <Story of={SheetStories.BottomModal} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Side" description="Use for a standard side sheet anchored to the right edge.">
+  <ComponentPreview caption="Side Sheet" note="Side sheets use a fixed-width surface with a title row and content slot.">
+    <Story of={SheetStories.Side} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Side Modal Back" description="Use when the side sheet is modal and includes a back affordance.">
+  <ComponentPreview caption="Modal Side Sheet" note="This example combines modal behavior with the optional back button in the header row.">
+    <Story of={SheetStories.SideModalBack} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use sheets for supplementary content anchored to an edge',
+    'Choose bottom or side placement based on the content flow',
+    'Use modal sheets when the content should temporarily take focus',
+    'Keep the sheet title and content concise',
+    'Use the back affordance only when the sheet flow requires it',
+  ]}
+  donts={[
+    'Use sheets for unrelated content with no connection to the current flow',
+    'Treat every sheet as modal by default',
+    'Overload a sheet with dense, unrelated sections',
+    'Show a back button when there is no back action',
+    'Rely on sheet placement alone to communicate importance',
+  ]}
+/>
+
+## Props
+
+<Controls of={SheetStories.Bottom} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    {
+      name: 'spacing(72)',
+      value: '288px',
+      role: 'Side sheet width',
+    },
+    {
+      name: 'spacing(40)',
+      value: '160px',
+      role: 'Bottom sheet minimum height',
+    },
+    {
+      name: 'spacing(4)',
+      value: '16px',
+      role: 'Sheet padding',
+    },
+    {
+      name: 'spacing(3)',
+      value: '12px',
+      role: 'Header row bottom margin',
+    },
+    {
+      name: 'spacing(2)',
+      value: '8px',
+      role: 'Header row gap',
+    },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Contrast">
+  Detailed contrast guidance is not visible in the provided material. Please confirm.
+</DocSection>
+
+<DocSection title="Interaction States">
+  Interaction states are not explicitly documented in the provided material. Please confirm.
+</DocSection>
+
+<DocSection title="Screen Reader">
+  Screen reader label and aria details are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Dialog', href: '/?path=/docs/ds-dialog--docs', description: 'Dialogs and sheets both present supporting content in layered surfaces' },
+    { label: 'List', href: '/?path=/docs/ds-list--docs', description: 'Sheets often contain list-like supporting content' },
+    { label: 'Button', href: '/?path=/docs/ds-button--docs', description: 'Buttons commonly trigger sheet opening and closing actions' },
+  ]}
+/>

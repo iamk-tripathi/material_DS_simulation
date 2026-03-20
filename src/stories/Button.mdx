@@ -1,0 +1,189 @@
+import { Meta, Controls } from '@storybook/addon-docs/blocks';
+import * as ButtonStories from './DSButton.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+import { DSButton, ThemeProvider } from '../components';
+import { theme } from '../theme/theme';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+Button is an action component used to present tappable actions with different emphasis levels. It solves the need to communicate primary, secondary, and tertiary actions clearly within a screen.
+
+## Variants
+
+<DocSection title="Filled" description="Use for the primary call-to-action. Maximum one filled button per screen.">
+  <ComponentPreview
+    caption="Filled Button"
+    note="Use for the single most important action on a screen."
+  >
+    <ThemeProvider theme={theme}>
+      <DSButton variant="filled">Label</DSButton>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Outlined" description="Use for secondary actions that need emphasis but are not the primary CTA.">
+  <ComponentPreview
+    caption="Outlined Button"
+    note="Pair with a filled button when offering a primary and secondary action together."
+  >
+    <ThemeProvider theme={theme}>
+      <DSButton variant="outlined">Label</DSButton>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Text" description="Use for low-emphasis tertiary actions, typically in dialogs or inline.">
+  <ComponentPreview
+    caption="Text Button"
+    note="Do not use as a standalone CTA. Always accompanied by a higher-emphasis button."
+  >
+    <ThemeProvider theme={theme}>
+      <DSButton variant="text">Label</DSButton>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Tonal" description="Use for secondary actions that need slightly more emphasis than outlined.">
+  <ComponentPreview caption="Tonal Button">
+    <ThemeProvider theme={theme}>
+      <DSButton variant="tonal">Label</DSButton>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Elevated" description="Use for actions on colored or image backgrounds where contrast is needed.">
+  <ComponentPreview caption="Elevated Button">
+    <ThemeProvider theme={theme}>
+      <DSButton variant="elevated">Label</DSButton>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+## States
+
+<DocSection title="Disabled" description="Use when an action is unavailable. Always indicate why an action is disabled through surrounding context.">
+  <ComponentPreview
+    caption="Disabled Button"
+    note="Never use disabled as the default state. Only disable when the action will become available again."
+  >
+    <ThemeProvider theme={theme}>
+      <DSButton variant="filled" disabled>
+        Label
+      </DSButton>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Destructive" description="Use for irreversible destructive actions such as delete or remove.">
+  <ComponentPreview
+    caption="Destructive Button"
+    note="Always confirm destructive actions with a dialog before executing."
+  >
+    <ThemeProvider theme={theme}>
+      <DSButton variant="filled" color="error">
+        Delete
+      </DSButton>
+    </ThemeProvider>
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use one filled button per screen for the primary action',
+    'Pair filled with outlined or text for secondary actions',
+    'Use sentence case for button labels',
+    'Keep labels concise — 1 to 3 words',
+    'Use error color only for destructive actions',
+  ]}
+  donts={[
+    'Use more than one filled button per screen',
+    'Use buttons for navigation — use links instead',
+    'Use ALL CAPS or Title Case for labels',
+    'Disable buttons without providing context why',
+    'Use tonal and filled buttons together at equal hierarchy',
+  ]}
+/>
+
+## Props
+
+<Controls of={ButtonStories.Filled} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    {
+      name: 'palette.primary.main',
+      value: '#6750A4',
+      role: 'Filled button background',
+      preview: '#6750A4',
+    },
+    {
+      name: 'palette.primary.contrastText',
+      value: '#FFFFFF',
+      role: 'Filled button label',
+      preview: '#FFFFFF',
+    },
+    {
+      name: 'palette.error.main',
+      value: '#B3261E',
+      role: 'Destructive button background',
+      preview: '#B3261E',
+    },
+    {
+      name: 'spacing(4)',
+      value: '16px',
+      role: 'Horizontal padding',
+    },
+    {
+      name: 'spacing(2.5)',
+      value: '10px',
+      role: 'Vertical padding',
+    },
+    {
+      name: 'shape.borderRadius',
+      value: '20px',
+      role: 'Button corner radius (full pill)',
+    },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Keyboard Navigation">
+  Tab to focus. Enter or Space to activate. Focus ring must be visible at all times.
+</DocSection>
+
+<DocSection title="Screen Reader">
+  Button label must describe the action, not the appearance. Use aria-label when the visible label is insufficient. Disabled buttons should use aria-disabled rather than the disabled attribute when the element needs to remain focusable.
+</DocSection>
+
+<DocSection title="Contrast">
+  Filled: primary (#6750A4) on white meets WCAG AA 4.5:1. Disabled state uses reduced opacity — do not rely on color alone to indicate disabled state.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    {
+      label: 'Card',
+      href: '/?path=/docs/ds-card--docs',
+      description: 'Cards often contain button actions',
+    },
+    {
+      label: 'Dialog',
+      href: '/?path=/docs/ds-dialog--docs',
+      description: 'Dialogs use button pairs for confirmation',
+    },
+    {
+      label: 'FAB',
+      href: '/?path=/docs/ds-navigation--docs',
+      description: 'Floating action buttons for primary screen action',
+    },
+  ]}
+/>

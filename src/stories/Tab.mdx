@@ -1,0 +1,110 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as TabStories from './DSTab.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={TabStories} />
+
+# Tab
+
+Tab organizes peer destinations within the same context. It keeps related views close together so users can switch between them without leaving the current hierarchy.
+
+## Variants
+
+<DocSection title="Primary Fixed" description="Use for a small set of peer destinations that all fit within the available width.">
+  <ComponentPreview caption="Primary Fixed Tabs" note="Primary fixed tabs are the clearest default when the destination set is short.">
+    <Story of={TabStories.PrimaryFixed} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Secondary Scrollable" description="Use when the peer set is wider than the available layout width.">
+  <ComponentPreview caption="Secondary Scrollable Tabs" note="Scrollable tabs work best when every peer still feels closely related.">
+    <Story of={TabStories.SecondaryScrollable} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Icon Only" description="Use only when the icon meanings are already well established.">
+  <ComponentPreview caption="Icon-Only Tabs" note="Icon-only tabs need especially strong icon clarity and surrounding context.">
+    <Story of={TabStories.IconOnly} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Label + Icon" description="Use when icon support reinforces the destination without replacing the label.">
+  <ComponentPreview caption="Label + Icon Tabs" note="This combination helps scanning when the icon and label carry complementary meaning.">
+    <Story of={TabStories.LabelIcon} />
+  </ComponentPreview>
+</DocSection>
+
+## States
+
+<DocSection title="Hovered" description="Use to preview hover feedback on the active region.">
+  <ComponentPreview caption="Hovered Tab" note="Hover should not overwhelm the selected indicator.">
+    <Story of={TabStories.Hovered} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Focused" description="Use when keyboard focus reaches the tab.">
+  <ComponentPreview caption="Focused Tab" note="Keep focused tabs visually clear for keyboard navigation across peers.">
+    <Story of={TabStories.Focused} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Pressed" description="Use to preview active press feedback.">
+  <ComponentPreview caption="Pressed Tab" note="Pressed feedback should reinforce direct interaction while keeping the selected tab clear.">
+    <Story of={TabStories.Pressed} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use tabs for closely related peer destinations',
+    'Use fixed tabs for smaller peer sets',
+    'Use scrollable tabs when the set exceeds the available width',
+    'Prefer labels unless icon-only meaning is already obvious',
+    'Preserve visible focus and selected indicators',
+  ]}
+  donts={[
+    'Use tabs for unrelated destinations',
+    'Hide important destination meaning behind ambiguous icons',
+    'Use tabs when content should instead be separate pages',
+    'Remove the selected indicator',
+    'Rely on hover color alone to communicate current state',
+  ]}
+/>
+
+## Props
+
+<Controls of={TabStories.PrimaryFixed} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    { name: 'palette.primary.main', value: '#6750A4', role: 'Primary tab text and indicator', preview: '#6750A4' },
+    { name: 'palette.secondary.main', value: '#625B71', role: 'Secondary tab text and indicator', preview: '#625B71' },
+    { name: 'palette.action.hover', value: 'Theme hover action token', role: 'Hovered tab background' },
+    { name: 'spacing(12)', value: '48px', role: 'Minimum tab height' },
+    { name: 'spacing(0.25)', value: '1px', role: 'Focused outline thickness' },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Navigation Model">
+  Tabs should make the current destination obvious and keep peer switching predictable.
+</DocSection>
+
+<DocSection title="Assistive Technology">
+  Arrow-key navigation, tabpanel relationships, and aria-controls behavior are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Navigation Bar', href: '/?path=/docs/ds-navigation-bar--docs', description: 'Use navigation bar for top-level destinations rather than peer content areas' },
+    { label: 'App Bar', href: '/?path=/docs/ds-app-bar--docs', description: 'Tabs often sit beneath or within an app bar surface' },
+    { label: 'List', href: '/?path=/docs/ds-list--docs', description: 'Lists can fill the content inside each tab panel' },
+  ]}
+/>

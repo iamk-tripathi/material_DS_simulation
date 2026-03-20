@@ -1,0 +1,104 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as SearchStories from './DSSearch.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={SearchStories} />
+
+# Search
+
+Search combines query entry with contextual surface treatments and optional identity cues. It supports compact bar search, docked search modules, and broader full-screen search presentations.
+
+## Variants
+
+<DocSection title="Bar" description="Use for default search entry in a compact horizontal surface.">
+  <ComponentPreview caption="Search Bar" note="Use this when search is available but not the only task on the screen.">
+    <Story of={SearchStories.Bar} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Docked Supporting Text" description="Use when search belongs to a persistent module and needs extra helper context.">
+  <ComponentPreview caption="Docked Search" note="Supporting text helps explain scope, shortcuts, or query behavior.">
+    <Story of={SearchStories.DockedSupportingText} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Full Screen" description="Use when discovery is the primary focus of the current view.">
+  <ComponentPreview caption="Full-Screen Search" note="Give full-screen search enough context to feel like a dedicated destination.">
+    <Story of={SearchStories.FullScreen} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="With Avatar" description="Use when identity or account context should stay attached to the query field.">
+  <ComponentPreview caption="Search With Avatar" note="Avatar-leading search works well in personalized search surfaces.">
+    <Story of={SearchStories.WithAvatar} />
+  </ComponentPreview>
+</DocSection>
+
+## States
+
+<DocSection title="Hovered" description="Use to preview hover feedback on the search field.">
+  <ComponentPreview caption="Hovered Search" note="Hover feedback should remain subtle so the field still reads as editable.">
+    <Story of={SearchStories.Hovered} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Pressed" description="Use to preview active press feedback.">
+  <ComponentPreview caption="Pressed Search" note="Pressed treatment should reinforce interaction without obscuring content.">
+    <Story of={SearchStories.Pressed} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Choose bar, docked, or full-screen search based on task prominence',
+    'Use supporting text only when it adds clear value',
+    'Keep the field easy to identify as editable',
+    'Use avatar-leading search only when identity context matters',
+    'Provide search context near the field when scope may be unclear',
+  ]}
+  donts={[
+    'Rely on placeholder text as the only accessible label',
+    'Use full-screen search for a minor utility action',
+    'Add supporting text that repeats the placeholder',
+    'Overload the leading area with too many competing affordances',
+    'Hide search scope when it affects results meaningfully',
+  ]}
+/>
+
+## Props
+
+<Controls of={SearchStories.Bar} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    { name: 'palette.background.paper', value: '#FFFBFE', role: 'Docked search surface', preview: '#FFFBFE' },
+    { name: 'palette.action.hover', value: 'Theme hover action token', role: 'Hovered input background' },
+    { name: 'palette.action.selected', value: 'Theme selected action token', role: 'Pressed input background' },
+    { name: 'spacing(60)', value: '240px', role: 'Bar and docked width' },
+    { name: 'spacing(80)', value: '320px', role: 'Full-screen width' },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Field Labeling">
+  Placeholder text should not be the only way the field is described to assistive technology.
+</DocSection>
+
+<DocSection title="Assistive Technology">
+  Search landmark usage, screen reader labeling, and submit behavior are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Menu', href: '/?path=/docs/ds-menu--docs', description: 'Search results or actions may open a contextual menu' },
+    { label: 'List', href: '/?path=/docs/ds-list--docs', description: 'Search often filters or reveals structured list content' },
+    { label: 'Avatar', href: '/?path=/docs/ds-avatar--docs', description: 'Avatar-leading search can carry account context' },
+  ]}
+/>

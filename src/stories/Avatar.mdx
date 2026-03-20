@@ -1,0 +1,118 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as AvatarStories from './DSAvatar.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={AvatarStories} />
+
+# Avatar
+
+Avatar represents a person, account, or identity placeholder through generic, monogram, check, and three-dimensional variants. It solves the need to show compact identity markers in a consistent shape.
+
+## Variants
+
+<DocSection title="Generic" description="Use when a standard avatar surface is needed.">
+  <ComponentPreview caption="Generic Avatar" note="The generic variant uses the primary color surface and label content.">
+    <Story of={AvatarStories.Generic} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Monogram" description="Use when a single character or initial should represent the identity.">
+  <ComponentPreview caption="Monogram Avatar" note="Monogram avatars reduce identity to a single leading character.">
+    <Story of={AvatarStories.Monogram} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Check Avatar" description="Use when the avatar needs a check state instead of a label.">
+  <ComponentPreview caption="Check Avatar" note="This variant swaps identity text for a confirmation-style icon.">
+    <Story of={AvatarStories.CheckAvatar} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Three Dimensional" description="Use when the avatar needs the alternate three-dimensional treatment.">
+  <ComponentPreview caption="Three-Dimensional Avatar" note="The three-dimensional variant switches to the secondary color surface and indexed content.">
+    <Story of={AvatarStories.ThreeDimensional} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use avatars to represent people, accounts, or identity placeholders',
+    'Use monograms when no image-based identity is available',
+    'Keep avatar labels short and scannable',
+    'Use the three-dimensional variant only when that visual style is intended',
+    'Keep avatar usage consistent within the same interface area',
+  ]}
+  donts={[
+    'Use avatars as general-purpose status icons',
+    'Mix too many avatar styles without hierarchy',
+    'Put long labels inside the avatar',
+    'Use check avatars when identity is still required',
+    'Rely on color alone to communicate meaning',
+  ]}
+/>
+
+## Props
+
+<Controls of={AvatarStories.Generic} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    {
+      name: 'palette.primary.main',
+      value: '#6750A4',
+      role: 'Generic avatar background',
+      preview: '#6750A4',
+    },
+    {
+      name: 'palette.primary.contrastText',
+      value: '#FFFFFF',
+      role: 'Generic avatar content',
+      preview: '#FFFFFF',
+    },
+    {
+      name: 'palette.secondary.main',
+      value: '#625B71',
+      role: 'Three-dimensional avatar background',
+      preview: '#625B71',
+    },
+    {
+      name: 'palette.secondary.contrastText',
+      value: '#FFFFFF',
+      role: 'Three-dimensional avatar content',
+      preview: '#FFFFFF',
+    },
+    {
+      name: 'spacing(10)',
+      value: '40px',
+      role: 'Avatar width and height',
+    },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Contrast">
+  Generic and three-dimensional avatars use contrast text on primary and secondary surfaces.
+</DocSection>
+
+<DocSection title="Interaction States">
+  This information is not visible in the provided material. Please confirm.
+</DocSection>
+
+<DocSection title="Screen Reader">
+  Screen reader label and aria details are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Badge', href: '/?path=/docs/ds-badge--docs', description: 'Badges can attach to avatars for counts and status' },
+    { label: 'List', href: '/?path=/docs/ds-list--docs', description: 'Lists often include avatars as leading identity elements' },
+    { label: 'App Bar', href: '/?path=/docs/ds-app-bar--docs', description: 'App bars frequently use avatars for profile access' },
+  ]}
+/>

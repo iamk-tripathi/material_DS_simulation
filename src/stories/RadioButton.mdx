@@ -1,0 +1,103 @@
+import { Meta, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as RadioStories from './DSRadioButton.stories';
+import { DocSection, DosDonts, TokenTable, ComponentPreview, RelatedLinks } from './doc-components';
+
+<Meta of={RadioStories} />
+
+# Radio Button
+
+Radio Button represents one choice inside a mutually exclusive set. Use it when the user must choose exactly one option from a group and should be able to compare all options before deciding.
+
+## Variants
+
+<DocSection title="Selected" description="Use when this option is the chosen value in the set.">
+  <ComponentPreview caption="Selected Radio Button" note="Selected state should always belong to a clearly labeled group.">
+    <Story of={RadioStories.Selected} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Unselected" description="Use when the option is available but not currently chosen.">
+  <ComponentPreview caption="Unselected Radio Button" note="Unselected radios should remain easy to scan alongside the selected option.">
+    <Story of={RadioStories.Unselected} />
+  </ComponentPreview>
+</DocSection>
+
+## States
+
+<DocSection title="Hovered" description="Use to preview pointer hover feedback.">
+  <ComponentPreview caption="Hovered Radio Button" note="Hover feedback should stay subtle and not compete with the selected state.">
+    <Story of={RadioStories.Hovered} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Focused" description="Use when keyboard focus reaches the control.">
+  <ComponentPreview caption="Focused Radio Button" note="Visible focus is essential for keyboard users moving through a group.">
+    <Story of={RadioStories.Focused} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Pressed" description="Use to preview active press feedback.">
+  <ComponentPreview caption="Pressed Radio Button" note="Pressed feedback should reinforce input without obscuring selection state.">
+    <Story of={RadioStories.Pressed} />
+  </ComponentPreview>
+</DocSection>
+
+<DocSection title="Disabled" description="Use when a choice is currently unavailable.">
+  <ComponentPreview caption="Disabled Radio Button" note="Provide surrounding context so users understand why a choice is unavailable.">
+    <Story of={RadioStories.Disabled} />
+  </ComponentPreview>
+</DocSection>
+
+## Do's and Don'ts
+
+<DosDonts
+  dos={[
+    'Use radio buttons for mutually exclusive choices',
+    'Keep options in one clearly labeled group',
+    'Preserve visible focus treatment for keyboard use',
+    'Keep labels short and easy to compare',
+    'Use disabled state only when the choice may become available later',
+  ]}
+  donts={[
+    'Use radio buttons for multi-select behavior',
+    'Split related radio options across distant layouts',
+    'Remove the visible selected indicator',
+    'Use color alone to communicate the chosen option',
+    'Hide the group label from users',
+  ]}
+/>
+
+## Props
+
+<Controls of={RadioStories.Selected} />
+
+## Tokens
+
+<TokenTable
+  tokens={[
+    { name: 'palette.primary.main', value: '#6750A4', role: 'Selected and focused emphasis', preview: '#6750A4' },
+    { name: 'palette.action.hover', value: 'Theme hover action token', role: 'Hovered radio background' },
+    { name: 'palette.action.selected', value: 'Theme selected action token', role: 'Pressed radio background' },
+    { name: 'spacing(0.25)', value: '1px', role: 'Focused outline thickness' },
+  ]}
+/>
+
+## Accessibility
+
+<DocSection title="Group Semantics">
+  Radio buttons should always be grouped so users understand they are making a single choice.
+</DocSection>
+
+<DocSection title="Assistive Technology">
+  Arrow-key movement, group semantics, and aria labeling are not visible in the provided material. Please confirm.
+</DocSection>
+
+## Related
+
+<RelatedLinks
+  links={[
+    { label: 'Checkbox', href: '/?path=/docs/ds-checkbox--docs', description: 'Use checkbox when users may select more than one option' },
+    { label: 'Switch', href: '/?path=/docs/ds-switch--docs', description: 'Use switch for immediate on or off settings' },
+    { label: 'List', href: '/?path=/docs/ds-list--docs', description: 'Lists can host exclusive choice rows with radio buttons' },
+  ]}
+/>
