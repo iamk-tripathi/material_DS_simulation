@@ -72,6 +72,37 @@ Valid values: `4, 8, 12, 16, 20, 24, 32, 40, 48, 64`
 - Outlined → on plain backgrounds
 - Always include a visible label
 
+### Mobile Layout Padding Rules
+1. Standard mobile screen gutter:
+   - Use `theme.spacing(3)` for left and right screen padding by default.
+   - Only use `theme.spacing(4)` when the layout is intentionally spacious and text wrapping is not affected.
+
+2. Avoid stacked horizontal insets:
+   - Do not combine screen padding, card padding, list item padding, and reserved icon gutters unless each layer is necessary.
+   - A content row should usually have at most 2 horizontal inset layers:
+     - outer container gutter
+     - inner surface padding
+
+3. Cards inside screens:
+   - If a card already has internal horizontal padding, child rows inside that card should not add extra left/right padding unless required by the component anatomy.
+
+4. Lists inside cards:
+   - Prefer `disableGutters` on `ListItem`.
+   - Keep row horizontal padding at `theme.spacing(0)` when the parent card already provides padding.
+   - Use row `gap` for icon/text separation instead of adding another horizontal padding layer.
+
+5. Icon spacing in rows:
+   - Do not reserve oversized icon columns by default.
+   - Avoid fixed `minWidth` on icon containers unless the DS component explicitly requires it.
+
+6. Mobile text wrapping check:
+   - After composing a mobile screen, verify that titles, amounts, and subtitles do not wrap early because of compounded padding.
+   - If text wraps too soon, reduce nested horizontal spacing before reducing typography size.
+
+7. Use tokens only:
+   - Never hardcode pixel paddings or margins.
+   - All layout spacing must use `theme.spacing()`.
+
 ---
 
 ## Screen Layout Patterns

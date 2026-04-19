@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import {
   Accordion,
   AccordionDetails,
@@ -58,6 +59,7 @@ export interface DSListProps {
   accordion?: 'collapsed' | 'expanded';
   swipeState?: 'default' | 'initiate-reveal' | 'revealed' | 'swipe-action';
   multiLine?: boolean;
+  children?: ReactNode;
 }
 
 const renderLeading = (leading: NonNullable<DSListProps['leading']>) => {
@@ -131,7 +133,12 @@ const DSList = ({
   accordion = 'collapsed',
   swipeState = 'default',
   multiLine = false,
+  children,
 }: DSListProps) => {
+  if (children) {
+    return <List disablePadding>{children}</List>;
+  }
+
   const item = (
     <ListItem
       sx={(theme) => ({
